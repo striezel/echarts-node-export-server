@@ -64,7 +64,7 @@ For example, POSTing the following JSON code to the server
         "data": ["Sales"]
       },
       "xAxis": {
-        "data": ["shirt","cardign","chiffon shirt","pants","heels","socks"]
+        "data": ["shirt","cardigan","chiffon shirt","pants","heels","socks"]
       },
       "yAxis": {},
       "series": [{
