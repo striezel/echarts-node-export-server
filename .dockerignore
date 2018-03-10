@@ -1,0 +1,5 @@
+# Git directory and Node.js modules
+.git
+*/node_modules/
+# Don't copy generated images.
+*/*.png

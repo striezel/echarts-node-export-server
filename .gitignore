@@ -1,0 +1,8 @@
+# Node.js modules
+node_modules/
+
+# generated PNG files
+*.png
+
+# prepared HTML template file
+template-real.html

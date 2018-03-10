@@ -1,0 +1,26 @@
+{
+  "name": "echarts-node-export-server",
+  "version": "1.0.0",
+  "description": "ECharts Node.js export server",
+  "repository": {
+    "url": "https://github.com/striezel/echarts-node-export-server",
+    "type": "git"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "ECharts",
+    "image",
+    "export",
+    "offline",
+    "Node.js",
+    "PhantomJS"
+  ],
+  "author": "Dirk Stolle <striezel-dev@web.de>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "phantomjs-prebuilt": "^2.1.16"
+  }
+}
