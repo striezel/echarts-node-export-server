@@ -1,4 +1,4 @@
-FROM debian:9
+FROM debian:9-slim
 MAINTAINER Dirk Stolle <striezel-dev@web.de>
 
 # Always update package lists and install updates first.
