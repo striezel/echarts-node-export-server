@@ -26,7 +26,7 @@ RUN mkdir -p /opt/export-server
 COPY export-server /opt/export-server
 WORKDIR /opt/export-server
 # Install required Node.js packages (basically PhantomJS).
-RUN if [ "$(arch)" != "armv7l" ]; then npm install; else apt-get install -y phantomjs --no-install-recommends --no-install-suggests; fi
+RUN if [ "$(arch)" != "armv7l" ]; then npm install && rm -rf /tmp/phantom*; else apt-get install -y phantomjs --no-install-recommends --no-install-suggests; fi
 # Node.js server runs on port 3000.
 EXPOSE 3000
 # Start server via NPM.
