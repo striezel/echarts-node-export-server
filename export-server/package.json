@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "ECharts Node.js export server",
   "repository": {
-    "url": "https://github.com/striezel/echarts-node-export-server",
+    "url": "https://gitlab.com/striezel/echarts-node-export-server.git",
     "type": "git"
   },
   "main": "server.js",

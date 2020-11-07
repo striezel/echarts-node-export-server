@@ -1,7 +1,7 @@
 # Installation of Node.js
 
 Since this a Node.js application, Node.js is obviously required to run it.
-I recommend to use the LTS version of Node.js, which is currently version 8.
+I recommend to use the LTS version of Node.js, which is currently version 14.
 This is also the version under which this application has been developed and
 tested. Therefore, using an older version of Node.js may work, but it is not
 recommended.
@@ -20,15 +20,15 @@ repository to your system.
 On Debian-based systems create the file **/etc/apt/sources.list.d/nodejs.list**
 and give it the following contents:
 
-    # Node.js 8.x for Debian 9 (codename stretch)
-    deb https://deb.nodesource.com/node_8.x stretch main
-    deb-src https://deb.nodesource.com/node_8.x stretch main
+    # Node.js 14.x for Debian 9 (codename stretch)
+    deb https://deb.nodesource.com/node_14.x stretch main
+    deb-src https://deb.nodesource.com/node_14.x stretch main
 
 After that do
 
     apt-get update && apt-get upgrade
 
-to update the APT package lists. To install Node.js 8, type
+to update the APT package lists. To install Node.js 14, type
 
     apt-get install nodejs
 
@@ -38,7 +38,7 @@ That's it.
 
 On a RedHat-based system (e.g. CentOS) make sure curl is installed and then type
 
-    curl -sL https://rpm.nodesource.com/setup_8.x | bash -
+    curl -sL https://rpm.nodesource.com/setup_14.x | bash -
 
 to download and execute a bash script that will take care of the installation.
 You might want to check the script code before doing that, though.
