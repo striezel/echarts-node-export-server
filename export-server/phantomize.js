@@ -18,6 +18,7 @@
 
 // This script basically takes care of the passing all the stuff to PhantomJS.
 
+const { v4: uuidv4 } = require('uuid');
 var child_process = require('child_process');
 var fs = require('fs');
 const paths = require('./paths.js');
@@ -39,7 +40,7 @@ const paths = require('./paths.js');
 */
 exports.render = function(jsonData, filename) {
   if (!filename) {
-    filename = 'phantom-render-' + Date.now() + '.png';
+    filename = 'graph-' + uuidv4() + '.png';;
   }
   if (typeof jsonData !== 'string') {
     return {
@@ -54,7 +55,7 @@ exports.render = function(jsonData, filename) {
     };
   }
 
-  const configDataFile = 'config-data-' + Date.now() + '.json';
+  const configDataFile = 'config-'+ filename + '.json';
   fs.writeFileSync(configDataFile, jsonData, {mode: 0o644, flag: 'w'});
 
   console.log("Starting PhantomJS ...\n(This might take one or two seconds.)");
