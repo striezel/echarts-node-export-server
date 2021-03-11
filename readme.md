@@ -56,6 +56,8 @@ plot as JSON in its body.
 For example, POSTing the following JSON code to the server
 
     {
+      "imageHeight":400,
+      "imageWidth":1000,
       "title": {
         "text": "ECharts entry example"
       },

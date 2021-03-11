@@ -50,10 +50,19 @@ if (system.args.length !== 4) {
   // Disable animation to render immediately.
   chartJson.animation = false;
 
+  if (!chartJson.imageWidth) {
+    chartJson.imageWidth = 600;
+  }
+  if (!chartJson.imageHeight) {
+    chartJson.imageHeight = 400;
+  }
+
   page.onLoadFinished = function (status) {
     // Create the chart by making a new plot with the given data.
     console.log('Creating chart ...');
     page.evaluate(function (chartJson) {
+      document.getElementById('plot').style.width = chartJson.imageWidth+'px';
+      document.getElementById('plot').style.height = chartJson.imageHeight+'px';
       var chart = echarts.init(document.getElementById('plot'));
       chart.setOption(chartJson);
     }, chartJson);
