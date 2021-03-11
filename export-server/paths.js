@@ -38,7 +38,7 @@ const paths = {
   phantomjs: basePathParts.concat(['node_modules', 'phantomjs-prebuilt', 'lib', 'phantom', 'bin', 'phantomjs']).join(path.sep),
 
   // absolute path of the current ECharts script
-  echartsJs: basePathParts.concat(['echarts-en.v4.9.0.min.js']).join(path.sep)
+  echartsJs: basePathParts.concat(['echarts.v5.0.2.min.js']).join(path.sep)
 };
 
 // On Windows systems we need the .exe extension to detect the file properly.
