@@ -46,7 +46,7 @@ To summarize:
 * URLs (e. g. for linking to information about a vulnerability in a dependency)
   should be enclose in angle brackets, e. g. `<https://example.com/>`.
 * For multi-line commit messages:
-  * Write a summary in the first line.
+  * Write the summary on the first line.
   * Leave the second line empty.
   * Then follow up with a more detailed explanation of the changes.
 * When only changing documentation, include `[ci skip]` on a separate line in
