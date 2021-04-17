@@ -24,6 +24,7 @@ const path = require('path');
 const paths = require('./paths.js');
 const phantomize = require('./phantomize.js');
 const url = require('url');
+const uuidv4 = require('uuid/v4');
 
 const hostname = 'localhost';
 const port = 3000;
@@ -163,7 +164,7 @@ const server = http.createServer(function(req, res) {
       return;
     }
     // Render file with PhantomJS.
-    const filename = 'graph-' + Date.now() + '.png';
+    const filename = 'graph-'+ uuidv4() + '.png';
     const result = phantomize.render(body, filename, req.headers["x-image-width"], req.headers["x-image-height"]);
     if (result.success) {
       res.statusCode = 200; // 200 == OK

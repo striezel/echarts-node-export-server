@@ -21,7 +21,7 @@
 var child_process = require('child_process');
 var fs = require('fs');
 const paths = require('./paths.js');
-
+const uuidv4 = require('uuid/v4');
 
 /* Renders JSON data for a ECharts plot into a PNG file.
 
@@ -40,8 +40,10 @@ const paths = require('./paths.js');
                  rendering, may be cryptic and is not necessarily human-friendly
 */
 exports.render = function(jsonData, filename, width, height) {
+  const unique_id = uuidv4();
+
   if (!filename) {
-    filename = 'phantom-render-' + Date.now() + '.png';
+    filename = 'phantom-render-' + unique_id + '.png';
   }
   if (typeof jsonData !== 'string') {
     return {
@@ -68,7 +70,7 @@ exports.render = function(jsonData, filename, width, height) {
     height = parsed_height;
   }
 
-  const configDataFile = 'config-data-' + Date.now() + '.json';
+  const configDataFile = 'config-data-' + unique_id + '.json';
   fs.writeFileSync(configDataFile, jsonData, {mode: 0o644, flag: 'w'});
 
   console.log("Starting PhantomJS ...\n(This might take one or two seconds.)");

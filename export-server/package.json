@@ -21,6 +21,7 @@
   "author": "Dirk Stolle <striezel-dev@web.de>",
   "license": "GPL-3.0",
   "dependencies": {
-    "phantomjs-prebuilt": "^2.1.16"
+    "phantomjs-prebuilt": "^2.1.16",
+    "uuid": "^3.4.0"
   }
 }
