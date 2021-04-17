@@ -56,8 +56,6 @@ plot as JSON in its body.
 For example, POSTing the following JSON code to the server
 
     {
-      "imageHeight":400,
-      "imageWidth":1000,
       "title": {
         "text": "ECharts entry example"
       },
@@ -89,6 +87,42 @@ image file on the server. In the example above you could then get the image from
 would look like this:
 
 ![Generated image example](./documentation/graph-1520685763528.png)
+
+### Adjusting the width and height of the generated image
+
+The generated PNG image has a width of 600 pixels and a height of 400 pixels by
+default. If no size is specified, then the image will be of that default size.
+However, this may not always be suitable for your needs.
+
+There are two ways to change the image size:
+
+* adding certain HTTP headers to the request, or
+* adding two data members to the POST-ed JSON data.
+
+If both are present, then the HTTP headers take precedence.
+
+#### Changing the size via HTTP headers
+
+To change the size, add the HTTP headers `X-Image-Width` and / or
+`X-Image-Height` to the request. Acceptable values are integers only, the values
+will be interpreted as pixels, not centimetres, inches or other. For example, if
+you want the image to be 750 x 500 pixels, then set the HTTP headers
+
+    X-Image-Width: 750
+    X-Image-Height: 500
+
+Using the same JSON as above, the created image will now be slightly larger and
+look like this:
+
+![Custom size image example](./documentation/graph-1618676297052.png)
+
+#### Changing the size via JSON
+
+If sending HTTP headers with your request is too cumbersome and you do not mind
+"polluting" the ECharts JSON with a bit of extra data, then that can be used to
+adjust the image size, too. Just add the members `imageWidth` and / or
+`imageHeight` to the top-level object. As with the HTTP headers, the values will
+be interpreted as pixels, not centimetres or inches.
 
 ## Troubleshooting
 
