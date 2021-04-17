@@ -96,7 +96,7 @@ However, this may not always be suitable for your needs.
 
 There are two ways to change the image size:
 
-* adding certain HTTP headers to the request, or
+* adding certain HTTP headers to the request _(preferred way)_, or
 * adding two data members to the POST-ed JSON data.
 
 If both are present, then the HTTP headers take precedence.
@@ -123,6 +123,31 @@ If sending HTTP headers with your request is too cumbersome and you do not mind
 adjust the image size, too. Just add the members `imageWidth` and / or
 `imageHeight` to the top-level object. As with the HTTP headers, the values will
 be interpreted as pixels, not centimetres or inches.
+
+For example, POSTing the following JSON code to the server
+
+    {
+      "imageWidth": 750,
+      "imageHeight": 500,
+      "title": {
+        "text": "ECharts entry example"
+      },
+      "tooltip": {},
+      "legend": {
+        "data": ["Sales"]
+      },
+      "xAxis": {
+        "data": ["shirt","cardigan","chiffon shirt","pants","heels","socks"]
+      },
+      "yAxis": {},
+      "series": [{
+        "name": "Sales",
+        "type": "bar",
+        "data": [5,20,36,10,10,20]
+      }]
+    }
+
+will generate the same image with dimensions of 750 x 500 pixels.
 
 ## Troubleshooting
 
