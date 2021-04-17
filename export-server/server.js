@@ -1,6 +1,6 @@
 /*
     ECharts offline image export server with Node.js
-    Copyright (C) 2018  Dirk Stolle
+    Copyright (C) 2018, 2021  Dirk Stolle
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -164,7 +164,7 @@ const server = http.createServer(function(req, res) {
     }
     // Render file with PhantomJS.
     const filename = 'graph-' + Date.now() + '.png';
-    const result = phantomize.render(body, filename);
+    const result = phantomize.render(body, filename, req.headers["x-image-width"], req.headers["x-image-height"]);
     if (result.success) {
       res.statusCode = 200; // 200 == OK
     } else {
