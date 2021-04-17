@@ -1,6 +1,6 @@
 /*
     ECharts offline image export server with Node.js
-    Copyright (C) 2018  Dirk Stolle
+    Copyright (C) 2018, 2021  Dirk Stolle
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -28,6 +28,8 @@ const paths = require('./paths.js');
    Parameters:
      jsonData - (string) the JSON data required by ECharts
      filename - (string) desired output file name for the PNG file
+     width    - (number) width of the PNG file in pixels
+     height   - (number) height of the PNG file in pixels
 
    Returns:
      object that contains two members:
@@ -37,7 +39,7 @@ const paths = require('./paths.js');
        failure - (string) reason for render failure; only present after failed
                  rendering, may be cryptic and is not necessarily human-friendly
 */
-exports.render = function(jsonData, filename) {
+exports.render = function(jsonData, filename, width, height) {
   if (!filename) {
     filename = 'phantom-render-' + Date.now() + '.png';
   }
@@ -52,6 +54,18 @@ exports.render = function(jsonData, filename) {
       success: false,
       failure: 'filename-not-a-string'
     };
+  }
+  const parsed_width = parseInt(width, 10);
+  if (isNaN(parsed_width) || parsed_width <= 0) {
+    width = undefined;
+  } else {
+    width = parsed_width;
+  }
+  const parsed_height = parseInt(height, 10);
+  if (isNaN(parsed_height) || parsed_height <= 0) {
+    height = undefined;
+  } else {
+    height = parsed_height;
   }
 
   const configDataFile = 'config-data-' + Date.now() + '.json';
@@ -68,7 +82,7 @@ exports.render = function(jsonData, filename) {
   }
   var stdout = child_process.execFileSync(paths.phantomjs,
     //arguments: render.js template.html plot-data.js output.png
-    [paths.renderJs, paths.usableTemplate, configDataFile, filename],
+    [paths.renderJs, paths.usableTemplate, configDataFile, filename, width, height],
     // Options: See above.
     options);
 

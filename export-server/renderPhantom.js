@@ -1,6 +1,6 @@
 /*
     ECharts offline image export server with Node.js
-    Copyright (C) 2018  Dirk Stolle
+    Copyright (C) 2018, 2021  Dirk Stolle
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -22,8 +22,8 @@ var page = require('webpage').create();
 var system = require('system');
 var fs = require('fs');
 
-if (system.args.length !== 4) {
-  console.log('Usage: phantom renderPhantom.js template.html config.json output.png');
+if (system.args.length !== 6) {
+  console.log('Usage: phantom renderPhantom.js template.html config.json output.png width height');
   phantom.exit(1);
 } else {
   // Get all file names from command line parameters.
@@ -32,6 +32,8 @@ if (system.args.length !== 4) {
   var configData = system.args[2];
   var configDataPath = fs.absolute(configData);
   var outFile = system.args[3];
+  var width = parseInt(system.args[4], 10);
+  var height = parseInt(system.args[5], 10);
 
   // Read the JSON data for the ECharts plot.
   var configString = fs.read(configDataPath);
@@ -50,13 +52,19 @@ if (system.args.length !== 4) {
   // Disable animation to render immediately.
   chartJson.animation = false;
 
+  // Handle image size and fallback to 600 x 400, if necessary.
+  width = width || parseInt(chartJson.imageWidth, 10) || 600;
+  height = height || parseInt(chartJson.imageHeight, 10) || 400;
+
   page.onLoadFinished = function (status) {
     // Create the chart by making a new plot with the given data.
     console.log('Creating chart ...');
-    page.evaluate(function (chartJson) {
+    page.evaluate(function (chartJson, width, height) {
+      document.getElementById('plot').style.width = width + 'px';
+      document.getElementById('plot').style.height = height + 'px';
       var chart = echarts.init(document.getElementById('plot'));
       chart.setOption(chartJson);
-    }, chartJson);
+    }, chartJson, width, height);
 
     // The evaluation and drawing is done, now render it to PNG.
     console.log('rendering image...');
