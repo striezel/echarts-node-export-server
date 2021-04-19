@@ -10,6 +10,16 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 2.0.0 (2021-04-??)
+
+__[breaking change]__
+The ECharts library is updated from version 4.9.0 to version 5.0.2. Note that
+ECharts 5.0.0 introduced some __breaking changes__ like using a different
+default colour scheme or removing the built-in map GeoJSON. A complete list of
+the changes can be found at
+<https://github.com/apache/echarts/releases/tag/5.0.0>. Review this list
+carefully before using the new version.
+
 ## Version 1.2.0 (2021-04-17)
 
 __[improvement]__
