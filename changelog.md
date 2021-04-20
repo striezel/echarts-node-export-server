@@ -10,7 +10,7 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
-## Version 2.0.0 (2021-04-??)
+## Version 2.0.0 (2021-04-20)
 
 * __[breaking change]__
 The ECharts library is updated from version 4.9.0 to version 5.0.2. Note that
