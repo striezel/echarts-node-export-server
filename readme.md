@@ -1,7 +1,7 @@
 # Node.js server for offline export of ECharts graphs
 
 This repository contains a Node.js application that starts a server which can
-render ECharts graphs to PNG images.
+render [ECharts](https://echarts.apache.org/) graphs to PNG images.
 
 ## Requirements
 
