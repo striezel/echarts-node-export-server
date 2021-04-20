@@ -90,7 +90,7 @@ would look like this:
 
 ### Adjusting the width and height of the generated image
 
-The generated PNG image has a width of 600 pixels and a height of 400 pixels by
+The generated PNG image has a width of 700 pixels and a height of 400 pixels by
 default. If no size is specified, then the image will be of that default size.
 However, this may not always be suitable for your needs.
 
