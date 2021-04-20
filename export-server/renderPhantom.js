@@ -52,8 +52,8 @@ if (system.args.length !== 6) {
   // Disable animation to render immediately.
   chartJson.animation = false;
 
-  // Handle image size and fallback to 600 x 400, if necessary.
-  width = width || parseInt(chartJson.imageWidth, 10) || 600;
+  // Handle image size and fallback to 700 x 400, if necessary.
+  width = width || parseInt(chartJson.imageWidth, 10) || 700;
   height = height || parseInt(chartJson.imageHeight, 10) || 400;
 
   page.onLoadFinished = function (status) {

@@ -78,19 +78,19 @@ will generate a JSON response like e.g.:
 
     {
       "success": true,
-      "filename": "graph-1520685763528.png"
+      "filename": "graph-4a8d8e1d-eef8-4593-bd4c-422866243121.png"
     }
 
 The field _filename_ in the response indicates the location of the generated
 image file on the server. In the example above you could then get the image from
-<http://localhost:3000/graph-1520685763528.png>. Given the data above the image
-would look like this:
+<http://localhost:3000/graph-4a8d8e1d-eef8-4593-bd4c-422866243121.png>. Given
+the data above the image would look like this:
 
-![Generated image example](./documentation/graph-1520685763528.png)
+![Generated image example](./documentation/graph-4a8d8e1d-eef8-4593-bd4c-422866243121.png)
 
 ### Adjusting the width and height of the generated image
 
-The generated PNG image has a width of 600 pixels and a height of 400 pixels by
+The generated PNG image has a width of 700 pixels and a height of 400 pixels by
 default. If no size is specified, then the image will be of that default size.
 However, this may not always be suitable for your needs.
 
@@ -114,7 +114,7 @@ you want the image to be 750 x 500 pixels, then set the HTTP headers
 Using the same JSON as above, the created image will now be slightly larger and
 look like this:
 
-![Custom size image example](./documentation/graph-1618676297052.png)
+![Custom size image example](./documentation/graph-2eae6ee3-cb0c-464d-8997-7c2476e8d69d.png)
 
 #### Changing the size via JSON
 
