@@ -155,6 +155,10 @@ If you encounter problems while trying to generate a chart image, then please
 take a look at [the FAQ](./documentation/troubleshooting-faq.md). Some common
 errors and possible solutions are listed there.
 
+## Version history
+
+A version history is available in [changelog.md](./changelog.md).
+
 ## Copyright and Licensing
 
 Copyright 2018, 2020, 2021  Dirk Stolle
