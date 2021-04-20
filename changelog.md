@@ -22,6 +22,8 @@ carefully before using the new version.
 
 * __[breaking change]__
 The default image width is increased from 600 pixels to 700 pixels.
+Note that you can always specify your desired image width and height via the
+image size feature that was introduced in version 1.1.0.
 
 ## Version 1.2.0 (2021-04-17)
 
