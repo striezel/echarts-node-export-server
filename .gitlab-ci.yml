@@ -1,0 +1,10 @@
+image: node:14-alpine
+
+node:
+  stage: build
+  before_script:
+    - node --version
+    - npm --version
+  script:
+    - cd ./export-server
+    - npm install

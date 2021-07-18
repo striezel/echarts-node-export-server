@@ -1,5 +1,9 @@
 # Git directory and Node.js modules
 .git
 */node_modules/
+# GitHub Actions workflow
+.github/
+# GitLab pipelines
+.gitlab-ci.yml
 # Don't copy generated images.
 */*.png
