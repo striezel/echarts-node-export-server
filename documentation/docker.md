@@ -54,7 +54,7 @@ quite right yet.
 The following commands have to be issued in the root directory of the checked
 out source code:
 
-    # create image - may take serveral minutes during the first run; runs after
+    # create image - may take several minutes during the first run; runs after
     # that are faster, because Docker caches some data
     docker build -t exportapp .
     # start container based on that image and pass port 3000 through
