@@ -64,7 +64,7 @@ function localPath(absolutePath) {
     // The following line basically replaces ALL occurrences of backward slash
     // with forward slash and all space characters with the URL-encoded version
     // for that (%20). We cannot simply do a String.replace(), because that
-    // only replaces the first occurence.
+    // only replaces the first occurrence.
     return '/' + absolutePath.split(path.sep).join('/').split(' ').join('%20');
   } else {
     return absolutePath;
