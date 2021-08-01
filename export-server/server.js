@@ -27,7 +27,19 @@ const url = require('url');
 const uuidv4 = require('uuid/v4');
 
 const hostname = 'localhost';
-const port = 3000;
+// Use port from environment variable PORT, if it is set and valid.
+const parsedPort = parseInt(process.env.PORT);
+if (process.env.PORT) {
+  if (isNaN(parsedPort)) {
+   console.log('Warning: PORT environment variable is not a number, using port 3000!');
+  } else if (parsedPort <= 0 || parsedPort > 65535) {
+   console.log('Warning: PORT environment variable is not a number between 1 and 65535, using port 3000!');
+  } else if (parsedPort < 1024) {
+   // Unless user is root or admin, binding to well-known ports is usually denied by the OS.
+   console.log('Warning: Binding to ports below 1024 may require root / administrative privileges!');
+  }
+}
+const port = (parsedPort && parsedPort > 0 && parsedPort < 65536) ? parsedPort : 3000;
 
 // ** Preparation, step 1: **
 // Find the PhantomJS executable. It is usually located in the node_modules

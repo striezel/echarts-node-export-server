@@ -47,6 +47,24 @@ You can simply start the application via
 which fires up the Node.js application. The server will then listen on
 <http://localhost:3000/> for incoming connections.
 
+If you want the server to listen on a different port, then you can set the
+environment variable `PORT` accordingly. On Linux-like systems you can do
+
+``` bash
+export PORT=4000
+npm start
+```
+
+The equivalent on Windows command prompt would be
+
+``` cmd
+SET PORT=4000
+npm start
+```
+
+In these cases the server will bind to port 4000 instead of the default port
+3000.
+
 ## Usage
 
 To generate a PNG file of an ECharts plot, just send an HTTP POST request to the

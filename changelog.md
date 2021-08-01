@@ -10,6 +10,13 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 2.1.0-pre1 (2021-08-01)
+
+* __[new feature]__
+The port to which the server binds can now be changed by setting the environment
+variable `PORT`. If `PORT` is not set or is not a valid port number, then the
+default port 3000 is used.
+
 ## Version 2.0.2 (2021-08-01)
 
 * __[maintenance]__
