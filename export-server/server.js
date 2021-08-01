@@ -26,7 +26,8 @@ const phantomize = require('./phantomize.js');
 const url = require('url');
 const uuidv4 = require('uuid/v4');
 
-const hostname = 'localhost';
+// Use hostname from environment variable HOST, if it is set.
+const hostname = process.env.HOST || 'localhost';
 // Use port from environment variable PORT, if it is set and valid.
 const parsedPort = parseInt(process.env.PORT);
 if (process.env.PORT) {

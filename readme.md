@@ -65,6 +65,16 @@ npm start
 In these cases the server will bind to port 4000 instead of the default port
 3000.
 
+The hostname can be changed, too, by setting the `HOST` environment variable in
+the same manner, e. g.:
+
+``` bash
+export HOST=0.0.0.0
+npm start
+```
+
+If `HOST` is not set, then `localhost` will be used as hostname.
+
 ## Usage
 
 To generate a PNG file of an ECharts plot, just send an HTTP POST request to the
