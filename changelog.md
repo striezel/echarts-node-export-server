@@ -10,6 +10,12 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 2.0.2 (2021-08-01)
+
+* __[maintenance]__
+Update dependencies `buffer-from` to 1.1.2, `mime-db` to 1.49.0 and `mime-types`
+to 2.1.32.
+
 ## Version 2.0.1 (2021-07-18)
 
 * __[maintenance]__
