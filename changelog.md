@@ -10,6 +10,12 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 2.1.2 (2021-12-10)
+
+* __[maintenance]__
+Update dependencies `asn1` to 0.2.6, `json-schema` to 0.4.0, `jsprim` to 1.4.2,
+`mime-db` to 1.51.0, and `mime-types` to 2.1.34.
+
 ## Version 2.1.1 (2021-10-09)
 
 * __[maintenance]__
