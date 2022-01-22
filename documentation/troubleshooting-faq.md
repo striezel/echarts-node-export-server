@@ -12,50 +12,54 @@ Note that there are some subtle differences between objects specified directly
 in JavaScript and valid JSON. For example, the plot data that could be specified
 in a JavaScript code snippet as
 
-    var myChart = echarts.init(document.getElementById('main'));
+```js
+var myChart = echarts.init(document.getElementById('main'));
 
-    // specify chart configuration item and data
-    var option = {
-        title: {
-            text: 'ECharts entry example'
-        },
-        tooltip: {},
-        legend: {
-            data:['Sales']
-        },
-        xAxis: {
-            data: ["shirt","cardigan","chiffon shirt","pants","heels","socks"]
-        },
-        yAxis: {},
-        series: [{
-            name: 'Sales',
-            type: 'bar',
-            data: [5, 20, 36, 10, 10, 20]
-        }]
-    };
-    myChart.setOption(option);
+// specify chart configuration item and data
+var option = {
+    title: {
+        text: 'ECharts entry example'
+    },
+    tooltip: {},
+    legend: {
+        data:['Sales']
+    },
+    xAxis: {
+        data: ["shirt","cardigan","chiffon shirt","pants","heels","socks"]
+    },
+    yAxis: {},
+    series: [{
+        name: 'Sales',
+        type: 'bar',
+        data: [5, 20, 36, 10, 10, 20]
+    }]
+};
+myChart.setOption(option);
+```
 
 corresponds to the following JSON to generate the same chart on the export
 server:
 
-    {
-      "title": {
-        "text": "ECharts entry example"
-      },
-      "tooltip": {},
-      "legend": {
-        "data": ["Sales"]
-      },
-      "xAxis": {
-        "data": ["shirt","cardigan","chiffon shirt","pants","heels","socks"]
-      },
-      "yAxis": {},
-      "series": [{
-        "name": "Sales",
-        "type": "bar",
-        "data": [5, 20, 36, 10, 10, 20]
-      }]
-    }
+```json
+{
+  "title": {
+    "text": "ECharts entry example"
+  },
+  "tooltip": {},
+  "legend": {
+    "data": ["Sales"]
+  },
+  "xAxis": {
+    "data": ["shirt","cardigan","chiffon shirt","pants","heels","socks"]
+  },
+  "yAxis": {},
+  "series": [{
+    "name": "Sales",
+    "type": "bar",
+    "data": [5, 20, 36, 10, 10, 20]
+  }]
+}
+```
 
 The notable differences are:
 
