@@ -10,6 +10,12 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 2.1.3 (2022-01-22)
+
+* __[maintenance]__
+Update dependencies `graceful-fs` to 4.2.9, `qs` to 6.5.4, and `sshpk` to
+1.17.0.
+
 ## Version 2.1.2 (2021-12-10)
 
 * __[maintenance]__
