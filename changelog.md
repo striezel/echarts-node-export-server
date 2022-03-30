@@ -10,6 +10,13 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 2.1.4 (2022-03-30)
+
+* __[maintenance]__
+Update dependency `minimist` to 1.26.0.
+This fixes a prototype pollution vulnerabilty in the `minimist` package,
+[CVE-2021-44906](https://nvd.nist.gov/vuln/detail/CVE-2021-44906).
+
 ## Version 2.1.3 (2022-01-22)
 
 * __[maintenance]__
