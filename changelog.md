@@ -10,6 +10,12 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 2.1.5 (2022-04-12)
+
+* __[maintenance]__
+Update dependencies `graceful-fs` to 4.2.10, `mime-db` to 1.52.0, `mime-type` to
+2.1.35, and `mkdirp` to 0.5.6.
+
 ## Version 2.1.4 (2022-03-30)
 
 * __[maintenance]__
