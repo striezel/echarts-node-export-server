@@ -1,6 +1,6 @@
 /*
     ECharts offline image export server with Node.js
-    Copyright (C) 2018, 2020, 2021  Dirk Stolle
+    Copyright (C) 2018, 2020, 2021, 2022  Dirk Stolle
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -38,7 +38,7 @@ const paths = {
   phantomjs: basePathParts.concat(['node_modules', 'phantomjs-prebuilt', 'lib', 'phantom', 'bin', 'phantomjs']).join(path.sep),
 
   // absolute path of the current ECharts script
-  echartsJs: basePathParts.concat(['echarts.v5.0.2.min.js']).join(path.sep)
+  echartsJs: basePathParts.concat(['echarts.v5.3.2.min.js']).join(path.sep)
 };
 
 // On Windows systems we need the .exe extension to detect the file properly.

@@ -10,6 +10,23 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 2.2.0 (2022-05-24)
+
+__[improvement]__
+The ECharts library is updated from version 5.0.2 to version 5.3.2.
+ECharts 5.3.2 brings several fixes and new features, compared to 5.0.2. For a
+full list of those see the release notes of ECharts:
+
+* [Changes in ECharts 5.3.2](https://github.com/apache/echarts/releases/tag/5.3.2)
+* [Changes in ECharts 5.3.1](https://github.com/apache/echarts/releases/tag/5.3.1)
+* [Changes in ECharts 5.3.0](https://github.com/apache/echarts/releases/tag/5.3.0)
+* [Changes in ECharts 5.2.2](https://github.com/apache/echarts/releases/tag/5.2.2)
+* [Changes in ECharts 5.2.1](https://github.com/apache/echarts/releases/tag/5.2.1)
+* [Changes in ECharts 5.2.0](https://github.com/apache/echarts/releases/tag/5.2.0)
+* [Changes in ECharts 5.1.2](https://github.com/apache/echarts/releases/tag/5.1.2)
+* [Changes in ECharts 5.1.1](https://github.com/apache/echarts/releases/tag/5.1.1)
+* [Changes in ECharts 5.1.0](https://github.com/apache/echarts/releases/tag/5.1.0)
+
 ## Version 2.1.5 (2022-04-12)
 
 * __[maintenance]__
