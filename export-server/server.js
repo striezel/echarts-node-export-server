@@ -23,7 +23,7 @@ const http = require('http');
 const path = require('path');
 const ssr = require('./ssr.js');
 const url = require('url');
-const uuidv4 = require('uuid/v4');
+const { v4: uuidv4 } = require('uuid');
 
 // Use hostname from environment variable HOST, if it is set.
 const hostname = process.env.HOST || 'localhost';

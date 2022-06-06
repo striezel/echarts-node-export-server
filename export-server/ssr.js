@@ -19,7 +19,7 @@
 var fs = require('fs');
 const { createCanvas } = require('canvas');
 const echarts = require('./echarts.v5.3.2.min.js');
-const uuidv4 = require('uuid/v4');
+const { v4: uuidv4 } = require('uuid');
 
 
 /* Renders JSON data for a ECharts plot into a SVG file.
@@ -105,10 +105,8 @@ function render_png(jsonData, filename, width, height) {
                  rendering, may be cryptic and is not necessarily human-friendly
 */
 exports.render = function(jsonData, filename, width, height) {
-  const unique_id = uuidv4();
-
   if (!filename) {
-    filename = 'graph-' + unique_id + '.svg';
+    filename = 'graph-' + uuidv4() + '.png';
   }
   if (typeof jsonData !== 'string') {
     return {

@@ -29,6 +29,9 @@ background. To set a background color, use the
 of ECharts. For example, to get the white background as in previous versions,
 add `"backgroundColor": "#ffffff"` to the chart options.
 
+* __[maintenance]__
+Update dependency `uuid` to 8.3.2.
+
 ## Version 2.2.0 (2022-05-24)
 
 __[improvement]__
