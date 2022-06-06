@@ -171,8 +171,8 @@ will generate the same image with dimensions of 750 x 500 pixels.
 
 By default, the application renders charts to PNG files. However, sometimes one
 may want a vector-based graphic format like SVG. To get SVG, add the HTTP header
-`X-Image-Format` and set its value to `svg` (all lower case). Using that, it
-will create a SVG file like this:
+`X-Image-Format` to your request and set its value to `svg` (all lower case).
+Using that, it will create a SVG file like this:
 
 ![SVG image example](./documentation/graph-e7df5157-ef8d-424f-a3db-e9184cbd570d.svg)
 
