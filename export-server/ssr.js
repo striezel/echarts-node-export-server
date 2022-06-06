@@ -17,6 +17,7 @@
 */
 
 var fs = require('fs');
+const { createCanvas } = require('canvas');
 const echarts = require('./echarts.v5.3.2.min.js');
 const paths = require('./paths.js');
 const uuidv4 = require('uuid/v4');
@@ -51,6 +52,37 @@ function render_svg(jsonData, filename, width, height) {
 
   const svg_data = chart.renderToSVGString();
   fs.writeFileSync(filename, svg_data, {encoding: 'utf8', mode: 0o644, flag: 'w'});
+  return {
+    success: true,
+    filename: filename
+  };
+}
+
+/* Renders JSON data for a ECharts plot into a PNG file.
+
+   Parameters:
+     jsonData - (string) the JSON data required by ECharts
+     filename - (string) desired output file name for the PNG file
+     width    - (number) width of the PNG file in pixels
+     height   - (number) height of the PNG file in pixels
+
+   Returns:
+     object that contains two members:
+       success - (boolean) indicates success of the rendering process
+       filename - (string) filename of the output, only present after successful
+                  rendering
+       failure - (string) reason for render failure; only present after failed
+                 rendering, may be cryptic and is not necessarily human-friendly
+*/
+function render_png(jsonData, filename, width, height) {
+  const canvas = createCanvas(width, height);
+  const chart = echarts.init(canvas);
+
+  jsonData.animation = false;
+  chart.setOption(jsonData);
+
+  const data = canvas.toBuffer('image/png');
+  fs.writeFileSync(filename, data, {mode: 0o644, flag: 'w'});
   return {
     success: true,
     filename: filename
@@ -108,7 +140,16 @@ exports.render = function(jsonData, filename, width, height) {
   height = height || parseInt(height, 10) || 400;
 
   const json_object = JSON.parse(jsonData);
-  render_svg(json_object, filename, width, height);
+  if (filename.endsWith('.png')) {
+    render_png(json_object, filename, width, height);
+  } else if (filename.endsWith('.svg')) {
+    render_svg(json_object, filename, width, height);
+  } else {
+    return {
+      success: false,
+      failure: "Only PNG or SVG files can be rendered."
+    };
+  }
 
   // File should usually exist, but let's be on the safe side here.
   if (fs.existsSync(filename)) {

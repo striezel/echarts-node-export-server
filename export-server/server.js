@@ -130,8 +130,9 @@ const server = http.createServer(function(req, res) {
     if (killed) {
       return;
     }
-    // Render file with PhantomJS.
-    const filename = 'graph-'+ uuidv4() + '.svg';
+    // Render file with ECharts.
+    const do_svg = (req.headers["x-image-format"] == 'svg');
+    const filename = 'graph-' + uuidv4() + (do_svg ? '.svg' : '.png');
     const result = ssr.render(body, filename, req.headers["x-image-width"], req.headers["x-image-height"]);
     if (result.success) {
       res.statusCode = 200; // 200 == OK
