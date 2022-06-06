@@ -1,5 +1,5 @@
 node_12:
-  image: node:12-alpine
+  image: node:12-slim
   stage: build
   before_script:
     - node --version
@@ -9,7 +9,7 @@ node_12:
     - npm install
 
 node_14:
-  image: node:14-alpine
+  image: node:14-slim
   stage: build
   before_script:
     - node --version
@@ -19,7 +19,7 @@ node_14:
     - npm install
 
 node_16:
-  image: node:16-alpine
+  image: node:16-slim
   stage: build
   before_script:
     - node --version
