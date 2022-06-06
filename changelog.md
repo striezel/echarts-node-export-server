@@ -12,8 +12,10 @@ change in this application.
 
 ## Version 2.3.0-pre (2022-06-??)
 
-Rendering is switched from PhantomJS to server-side rendering of ECharts, available since
-ECharts 5.3.0.
+Rendering is switched from PhantomJS to server-side rendering of ECharts,
+available since ECharts 5.3.0. Furthermore, it is now possible to get the plots
+rendered as SVG images. To switch to SVG, add the  HTTP header `X-Image-Format`
+to the request and set its value to `svg` (all lower case).
 
 ## Version 2.2.0 (2022-05-24)
 
