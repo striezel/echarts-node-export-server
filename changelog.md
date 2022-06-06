@@ -10,6 +10,11 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 2.3.0-pre (2022-06-??)
+
+Rendering is switched from PhantomJS to server-side rendering of ECharts, available since
+ECharts 5.3.0.
+
 ## Version 2.2.0 (2022-05-24)
 
 __[improvement]__

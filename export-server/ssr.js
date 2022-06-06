@@ -1,6 +1,6 @@
 /*
     ECharts offline image export server with Node.js
-    Copyright (C) 2018, 2021  Dirk Stolle
+    Copyright (C) 2018, 2021, 2022  Dirk Stolle
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -16,12 +16,46 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-// This script basically takes care of the passing all the stuff to PhantomJS.
-
-var child_process = require('child_process');
 var fs = require('fs');
+const echarts = require('./echarts.v5.3.2.min.js');
 const paths = require('./paths.js');
 const uuidv4 = require('uuid/v4');
+
+
+/* Renders JSON data for a ECharts plot into a SVG file.
+
+   Parameters:
+     jsonData - (string) the JSON data required by ECharts
+     filename - (string) desired output file name for the PNG file
+     width    - (number) width of the PNG file in pixels
+     height   - (number) height of the PNG file in pixels
+
+   Returns:
+     object that contains two members:
+       success - (boolean) indicates success of the rendering process
+       filename - (string) filename of the output, only present after successful
+                  rendering
+       failure - (string) reason for render failure; only present after failed
+                 rendering, may be cryptic and is not necessarily human-friendly
+*/
+function render_svg(jsonData, filename, width, height) {
+  const chart = echarts.init(null, null, {
+    renderer: 'svg',
+    ssr: true,
+    width: width,
+    height: height
+  });
+
+  jsonData.animation = false;
+  chart.setOption(jsonData);
+
+  const svg_data = chart.renderToSVGString();
+  fs.writeFileSync(filename, svg_data, {encoding: 'utf8', mode: 0o644, flag: 'w'});
+  return {
+    success: true,
+    filename: filename
+  };
+}
 
 /* Renders JSON data for a ECharts plot into a PNG file.
 
@@ -43,7 +77,7 @@ exports.render = function(jsonData, filename, width, height) {
   const unique_id = uuidv4();
 
   if (!filename) {
-    filename = 'phantom-render-' + unique_id + '.png';
+    filename = 'graph-' + unique_id + '.svg';
   }
   if (typeof jsonData !== 'string') {
     return {
@@ -69,33 +103,12 @@ exports.render = function(jsonData, filename, width, height) {
   } else {
     height = parsed_height;
   }
+  // Handle image size and fallback to 700 x 400, if necessary.
+  width = width || parseInt(width, 10) || 700;
+  height = height || parseInt(height, 10) || 400;
 
-  const configDataFile = 'config-data-' + unique_id + '.json';
-  fs.writeFileSync(configDataFile, jsonData, {mode: 0o644, flag: 'w'});
-
-  console.log("Starting PhantomJS ...\n(This might take one or two seconds.)");
-  // Options for spawned child process:
-  // Set timeout to 15 seconds and kill signal to SIGKILL, so that process
-  // gets killed after timeout.
-  var options =  {timeout: 15000, killSignal: 'SIGKILL'};
-  // Set offscreen rendering for ARM.
-  if (process.arch === 'arm') {
-    options.env = {QT_QPA_PLATFORM: "offscreen"};
-  }
-  var stdout = child_process.execFileSync(paths.phantomjs,
-    //arguments: render.js template.html plot-data.js output.png
-    [paths.renderJs, paths.usableTemplate, configDataFile, filename, width, height],
-    // Options: See above.
-    options);
-
-  console.log("=> PhantomJS output: " + stdout);
-
-  // Delete JSON data file with plot data.
-  fs.unlink(configDataFile, function(err) {
-    if (err) {
-      console.warn('Could not unlink JSON file ' + configDataFile + '!');
-    }
-  });
+  const json_object = JSON.parse(jsonData);
+  render_svg(json_object, filename, width, height);
 
   // File should usually exist, but let's be on the safe side here.
   if (fs.existsSync(filename)) {
@@ -106,7 +119,7 @@ exports.render = function(jsonData, filename, width, height) {
   } else {
     return {
       success: false,
-      failure: 'phantomjs-renderer'
+      failure: 'echarts-renderer'
     };
   }
 };

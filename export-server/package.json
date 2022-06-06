@@ -1,6 +1,6 @@
 {
   "name": "echarts-node-export-server",
-  "version": "2.2.0",
+  "version": "2.3.0-pre",
   "description": "ECharts Node.js export server",
   "repository": {
     "url": "https://gitlab.com/striezel/echarts-node-export-server.git",
@@ -21,7 +21,6 @@
   "author": "Dirk Stolle <striezel-dev@web.de>",
   "license": "GPL-3.0",
   "dependencies": {
-    "phantomjs-prebuilt": "^2.1.16",
     "uuid": "^3.4.0"
   }
 }
