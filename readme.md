@@ -5,10 +5,11 @@ render [ECharts](https://echarts.apache.org/) graphs to PNG images.
 
 ## Requirements
 
-This application needs two prerequisites:
+This application needs the following prerequisites:
 
 * Node.js (preferably the latest LTS version)
-* PhantomJS (installed via NPM)
+* internet connection to download required dependencies (only once before
+  first start)
 
 ### Installation of Node.js
 
@@ -19,24 +20,13 @@ then please take a look at [Setup with Docker](./documentation/docker.md).)_
 
 ## Initial setup: install Node.js dependency packages
 
-The application requires a package for PhantomJS. To install that, type
+The application requires a package for canvas-based rendering. To install that,
+type
 
     npm install
 
 in the directory `export-server/`. You only need to do this once. The packages
 are then cached in the `node_modules/` directory for future use.
-
-However, PhantomJS does not offer a prebuilt package for some platforms, namely
-ARM which is used by Raspberry Pi (among others). In such case you can install
-the PhantomJS package provided by your package manager via
-
-    apt-get install phantomjs
-
-on Raspbian, or via
-
-    yum install phantomjs
-
-on RedHat-based distributions.
 
 ## Start the application
 
@@ -91,6 +81,7 @@ For example, POSTing the following JSON code to the server
       "legend": {
         "data": ["Sales"]
       },
+      "backgroundColor": "#ffffff",
       "xAxis": {
         "data": ["shirt","cardigan","chiffon shirt","pants","heels","socks"]
       },
@@ -176,6 +167,15 @@ For example, POSTing the following JSON code to the server
     }
 
 will generate the same image with dimensions of 750 x 500 pixels.
+
+### Switch rendering to SVG
+
+By default, the application renders charts to PNG files. However, sometimes one
+may want a vector-based graphic format like SVG. To get SVG, add the HTTP header
+`X-Image-Format` to your request and set its value to `svg` (all lower case).
+Using that, it will create a SVG file like this:
+
+![SVG image example](./documentation/graph-e7df5157-ef8d-424f-a3db-e9184cbd570d.svg)
 
 ## Troubleshooting
 

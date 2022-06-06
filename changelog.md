@@ -10,6 +10,25 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 2.3.0-pre (2022-06-??)
+
+__[improvement]__
+Rendering is switched from PhantomJS to server-side rendering of ECharts,
+available since ECharts 5.3.0. This should be faster than the previous approach
+with PhantomJS.
+
+__[new feature]__
+Furthermore, it is now possible to get the plots rendered as SVG images. To
+switch to SVG, add the  HTTP header `X-Image-Format` to the request and set its
+value to `svg` (all lower case).
+
+__[breaking change]__
+PNG images will now use a transparent background instead of the previous white
+background. To set a background color, use the
+[backgroundColor](https://echarts.apache.org/en/option.html#backgroundColor)
+of ECharts. For example, to get the white background as in previous versions,
+add `"backgroundColor": "#ffffff"` to the chart options.
+
 ## Version 2.2.0 (2022-05-24)
 
 __[improvement]__

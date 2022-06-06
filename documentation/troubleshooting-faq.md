@@ -24,6 +24,7 @@ var option = {
     legend: {
         data:['Sales']
     },
+    backgroundColor: '#ffffff',
     xAxis: {
         data: ["shirt","cardigan","chiffon shirt","pants","heels","socks"]
     },
@@ -49,6 +50,7 @@ server:
   "legend": {
     "data": ["Sales"]
   },
+  "backgroundColor": "#ffffff",
   "xAxis": {
     "data": ["shirt","cardigan","chiffon shirt","pants","heels","socks"]
   },

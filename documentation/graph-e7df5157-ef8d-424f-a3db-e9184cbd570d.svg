@@ -1,0 +1,38 @@
+<svg width="700" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 700 400">
+<rect width="700" height="400" x="0" y="0" id="0" fill="none" fill-opacity="1"></rect>
+<path d="M70 330.5L630 330.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M70 262.5L630 262.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M70 195.5L630 195.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M70 127.5L630 127.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M70 60.5L630 60.5" fill="none" stroke="#E0E6F1"></path>
+<path d="M70 330.5L630 330.5" fill="none" stroke="#6E7079" stroke-linecap="round"></path>
+<path d="M70.5 330L70.5 335" fill="none" stroke="#6E7079"></path>
+<path d="M163.5 330L163.5 335" fill="none" stroke="#6E7079"></path>
+<path d="M256.5 330L256.5 335" fill="none" stroke="#6E7079"></path>
+<path d="M350.5 330L350.5 335" fill="none" stroke="#6E7079"></path>
+<path d="M443.5 330L443.5 335" fill="none" stroke="#6E7079"></path>
+<path d="M536.5 330L536.5 335" fill="none" stroke="#6E7079"></path>
+<path d="M630.5 330L630.5 335" fill="none" stroke="#6E7079"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(62 330)" fill="#6E7079">0</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(62 262.5)" fill="#6E7079">10</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(62 195)" fill="#6E7079">20</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(62 127.5)" fill="#6E7079">30</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(62 60)" fill="#6E7079">40</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(116.6667 338)" fill="#6E7079">shirt</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(210 338)" fill="#6E7079">cardigan</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" xml:space="preserve" y="6" transform="translate(303.3333 338)" fill="#6E7079">chiffon shirt</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(396.6667 338)" fill="#6E7079">pants</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(490 338)" fill="#6E7079">heels</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(583.3333 338)" fill="#6E7079">socks</text>
+<path d="M84.5 330l64.4 0l0 -33.7l-64.4 0Z" fill="#5470c6"></path>
+<path d="M177.8 330l64.4 0l0 -135l-64.4 0Z" fill="#5470c6"></path>
+<path d="M271.1 330l64.4 0l0 -243l-64.4 0Z" fill="#5470c6"></path>
+<path d="M364.5 330l64.4 0l0 -67.5l-64.4 0Z" fill="#5470c6"></path>
+<path d="M457.8 330l64.4 0l0 -67.5l-64.4 0Z" fill="#5470c6"></path>
+<path d="M551.1 330l64.4 0l0 -135l-64.4 0Z" fill="#5470c6"></path>
+<path d="M-5 -5l70.1 0l0 24l-70.1 0Z" transform="translate(319.94 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0" transform="translate(319.94 5)" fill="#5470c6"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:sans-serif;" x="30" y="7" transform="translate(319.94 5)" fill="#333">Sales</text>
+<path d="M-5 -5l132.4 0l0 22l-132.4 0Z" transform="translate(5 5)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#ccc" stroke-width="0"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:sans-serif;font-weight:bold;" xml:space="preserve" y="6" transform="translate(5 5)" fill="#464646">ECharts entry example</text>
+</svg>
