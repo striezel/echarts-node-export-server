@@ -89,11 +89,11 @@ function render_png(jsonData, filename, width, height) {
   };
 }
 
-/* Renders JSON data for a ECharts plot into a PNG file.
+/* Renders JSON data for a ECharts plot into a PNG or SVG file.
 
    Parameters:
      jsonData - (string) the JSON data required by ECharts
-     filename - (string) desired output file name for the PNG file
+     filename - (string) desired output file name for the PNG/SVG file
      width    - (number) width of the PNG file in pixels
      height   - (number) height of the PNG file in pixels
 
