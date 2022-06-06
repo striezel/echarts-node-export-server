@@ -1,0 +1,28 @@
+name: Alpine Linux
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Prepare Docker
+      run: |
+        docker run -w /opt/export-server -dit --name alpine -v $PWD/export-server:/opt/export-server alpine:latest
+        echo 'docker exec alpine "$@";' > ./alpine.sh
+        chmod +x ./alpine.sh
+    - name: Install Node.js + NPM
+      run: |
+        ./alpine.sh apk update
+        ./alpine.sh apk add nodejs npm
+    - name: Install build dependencies for Node.js canvas
+      run: |
+        ./alpine.sh apk add g++ make pkgconf
+        ./alpine.sh apk add cairo-dev giflib-dev jpeg-dev pango-dev
+    - name: Install Node.js packages
+      run: |
+        ./alpine.sh npm install
+    - name: Stop Docker container
+      run: |
+        docker stop alpine
