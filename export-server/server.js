@@ -21,7 +21,6 @@
 const fs = require('fs');
 const http = require('http');
 const path = require('path');
-const paths = require('./paths.js');
 const ssr = require('./ssr.js');
 const url = require('url');
 const uuidv4 = require('uuid/v4');

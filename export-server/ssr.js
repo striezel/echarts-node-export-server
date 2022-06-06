@@ -19,7 +19,6 @@
 var fs = require('fs');
 const { createCanvas } = require('canvas');
 const echarts = require('./echarts.v5.3.2.min.js');
-const paths = require('./paths.js');
 const uuidv4 = require('uuid/v4');
 
 
