@@ -19,7 +19,7 @@ RUN echo "# Node.js 14.x for Debian 11 (codename bullseye)" > /etc/apt/sources.l
   && echo "deb https://deb.nodesource.com/node_14.x bullseye main" >> /etc/apt/sources.list.d/nodejs.list \
   && echo "deb-src https://deb.nodesource.com/node_14.x bullseye main" >> /etc/apt/sources.list.d/nodejs.list
 RUN apt-key adv --fetch-keys https://deb.nodesource.com/gpgkey/nodesource.gpg.key
-RUN apt-get update && apt-get install --no-install-recommends -y nodejs bzip2
+RUN apt-get update && apt-get install --no-install-recommends -y nodejs
 # Create directory for application.
 RUN mkdir -p /opt/export-server
 # Copy all files to that directory.
