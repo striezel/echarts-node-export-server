@@ -16,7 +16,8 @@
     "export",
     "offline",
     "Node.js",
-    "PhantomJS"
+    "SSR",
+    "server-side rendering"
   ],
   "author": "Dirk Stolle <striezel-dev@web.de>",
   "license": "GPL-3.0",
