@@ -12,7 +12,7 @@ installer package and install it.
 
 ## Node.js on Linux
 If your Linux distribution does not provide a recent Node.js version (at least
-version 8 is recommended), you can add an (unofficial) Node.js package
+version 10 is recommended), you can add an (unofficial) Node.js package
 repository to your system.
 
 ### Debian-based
@@ -52,3 +52,23 @@ type
 
 in the directory `export-server/`. You only need to do this once. The packages
 are then cached in the `node_modules/` directory for future use.
+
+Note that this can possibly fail for some operating systems where no
+pre-compiled version of the Node.js
+[`canvas` package](https://www.npmjs.com/package/canvas/v/2.9.1#compiling)
+is available. In that case Node.js attempts to compile the package from source.
+However, that requires some additional software, for example a C++ compiler as
+well as Cairo and Pango. The documentation of canvas` has more information on
+how those dependencies can to be installed:
+<https://github.com/Automattic/node-canvas/wiki>
+
+Basically, it boils down to one of the following commands:
+
+| OS           | Command to install dependencies                               |
+| ------------ | ------------------------------------------------------------- |
+| Alpine Linux | apk update && apk add g++ make pkgconf cairo-dev pango-dev    |
+| Debian       | apt-get install build-essential libcairo2-dev libpango1.0-dev |
+| Fedora       | yum install yum gcc-c++ cairo-devel pango-devel
+
+After all dependencies for compilation of `canvas` are installed, `npm install`
+will succeed.
