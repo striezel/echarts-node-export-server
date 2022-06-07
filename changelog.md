@@ -24,7 +24,7 @@ value to `svg` (all lower case).
 
 __[breaking change]__
 PNG images will now use a transparent background instead of the previous white
-background. To set a background color, use the
+background. To set a background color, use the option
 [backgroundColor](https://echarts.apache.org/en/option.html#backgroundColor)
 of ECharts. For example, to get the white background as in previous versions,
 add `"backgroundColor": "#ffffff"` to the chart options.
