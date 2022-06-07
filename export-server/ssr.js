@@ -120,6 +120,9 @@ exports.render = function(jsonData, filename, width, height) {
       failure: 'filename-not-a-string'
     };
   }
+
+  const json_object = JSON.parse(jsonData);
+
   const parsed_width = parseInt(width, 10);
   if (isNaN(parsed_width) || parsed_width <= 0) {
     width = undefined;
@@ -133,10 +136,9 @@ exports.render = function(jsonData, filename, width, height) {
     height = parsed_height;
   }
   // Handle image size and fallback to 700 x 400, if necessary.
-  width = width || parseInt(width, 10) || 700;
-  height = height || parseInt(height, 10) || 400;
+  width = width || parseInt(json_object.imageWidth, 10) || 700;
+  height = height || parseInt(json_object.imageHeight, 10) || 400;
 
-  const json_object = JSON.parse(jsonData);
   if (filename.endsWith('.png')) {
     render_png(json_object, filename, width, height);
   } else if (filename.endsWith('.svg')) {
