@@ -1,0 +1,20 @@
+name: Node.js package audit
+
+on: push
+
+jobs:
+  package-audit:
+    strategy:
+      matrix:
+        node-version:
+          - 14
+    runs-on: ubuntu-20.04
+    name: Node.js package audit
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Audit npm packages
+        run: cd export-server && npm audit
