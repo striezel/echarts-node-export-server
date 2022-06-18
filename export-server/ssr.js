@@ -18,7 +18,7 @@
 
 var fs = require('fs');
 const { createCanvas } = require('canvas');
-const echarts = require('./echarts.v5.3.2.min.js');
+const echarts = require('./echarts.v5.3.3.min.js');
 const { v4: uuidv4 } = require('uuid');
 
 

@@ -10,6 +10,15 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 3.0.1 (2022-06-18)
+
+__[improvement]__
+The ECharts library is updated from version 5.3.2 to version 5.3.3.
+ECharts 5.3.3 brings several fixes and a few new features, compared to 5.3.2.
+For a full list of those see the release notes of ECharts:
+
+* [Changes in ECharts 5.3.3](https://github.com/apache/echarts/releases/tag/5.3.3)
+
 ## Version 3.0.0 (2022-06-07)
 
 __[improvement]__
