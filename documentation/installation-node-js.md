@@ -12,7 +12,7 @@ installer package and install it.
 
 ## Node.js on Linux
 If your Linux distribution does not provide a recent Node.js version (at least
-version 10 is recommended), you can add an (unofficial) Node.js package
+version 14 is recommended), you can add an (unofficial) Node.js package
 repository to your system.
 
 ### Debian-based
