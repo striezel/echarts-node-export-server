@@ -7,7 +7,7 @@ render [ECharts](https://echarts.apache.org/) graphs to PNG or SVG images.
 
 This application needs the following prerequisites:
 
-* Node.js (preferably the latest LTS version)
+* Node.js 8 or later (preferably the latest LTS version)
 * internet connection to download required dependencies (only once before
   first start)
 

@@ -10,6 +10,13 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 3.0.2 (2022-07-03)
+
+__[improvement]__
+The requirement for Node.js 8 or a later version is now explicitly stated in the
+`package.json` file. While Node.js 8 or later has been required since version
+3.0.0, this step provides clarity on the required version of Node.js.
+
 ## Version 3.0.1 (2022-06-18)
 
 __[improvement]__
@@ -37,6 +44,10 @@ background. To set a background color, use the option
 [backgroundColor](https://echarts.apache.org/en/option.html#backgroundColor)
 of ECharts. For example, to get the white background as in previous versions,
 add `"backgroundColor": "#ffffff"` to the chart options.
+
+Furthermore, the application will now __require at least version 8 of Node.js,__
+but the use of a later version that is still maintained (e. g. Node.js 14 LTS)
+is preferred.
 
 __[maintenance]__
 Update dependency `uuid` to 8.3.2.
