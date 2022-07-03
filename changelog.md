@@ -10,6 +10,11 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 3.0.3 (2022-07-03)
+
+* __[maintenance]__
+Update dependencies `canvas` to 2.9.3, and `minipass` to 3.3.4.
+
 ## Version 3.0.2 (2022-07-03)
 
 __[improvement]__
