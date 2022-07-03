@@ -69,3 +69,26 @@ The notable differences are:
   delimiters in JSON
 * names of object members in JSON have to be enclosed in double quotes, too,
   e.g. _name: 'Sales'_ becomes _"name": "Sales"_
+
+## The message "Fontconfig error: Cannot load default config file" shows up during the first request. What is this about?
+
+This means that the [Fontconfig](https://en.wikipedia.org/wiki/Fontconfig)
+library is missing on your system. It is required to find installed fonts and
+properly render texts (e. g. for labels) in the generated PNG graphics.
+
+Fontconfig can be installed by typing
+
+```bash
+apt-get install libfontconfig1
+```
+
+on Debian or Debian-based systems (e. g. Ubuntu).
+
+After the installation of Fontconfig, the export server has to be stopped and
+then (re-)started with `npm start`. Otherwise it will not recognize that
+Fontconfig has been installed.
+
+## Text does not render properly in the generated PNG images. How can it be fixed?
+
+That phenomenon is usually an indication that Fontconfig is missing.
+See the answer to the previous question on how to install Fontconfig.
