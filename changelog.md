@@ -10,6 +10,11 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 3.0.4 (2022-09-12)
+
+* __[maintenance]__
+Update dependencies `canvas` to 2.10.1, and `@mapbox/node-pre-gyp` to 1.0.10.
+
 ## Version 3.0.3 (2022-07-03)
 
 * __[maintenance]__
