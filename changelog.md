@@ -10,6 +10,14 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 4.0.0-pre (2022-09-??)
+
+__[breaking change]__
+Support for Node.js 8 and Node.js 9 is dropped. The minimum required version is
+now Node.js 10. Node.js 8 has reached its end of life on 2019-12-31, and
+Node.js 9 reached its end of life on 2018-06-30. If you are still using older
+versions of Node.js, then please consider updating to a newer one.
+
 ## Version 3.0.4 (2022-09-12)
 
 * __[maintenance]__
