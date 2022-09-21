@@ -12,7 +12,7 @@ change in this application.
 
 ## Version 4.0.0-pre (2022-09-??)
 
-__[breaking change]__
+* __[breaking change]__
 __Support for Node.js 8, Node.js 9, Node.js 10, and Node.js 11 is dropped.__
 The minimum required version is now Node.js 12.
 Node.js 8 has reached its end of life on 2019-12-31, Node.js 9 reached its end
@@ -20,6 +20,9 @@ of life on 2018-06-30, Node.js 10 reached its end of life on 2021-04-30, Node.js
 11 reached its end of life on 2019-06-01. All those versions are not maintained
 anymore by the Node.js developers. If you are still using older versions of
 Node.js, then please consider updating to a newer one.
+* __[breaking change]__
+Update dependency `canvas` to 9.0.0. This version of `canvas` drops support for
+Node.js 10 (and earlier).
 
 ## Version 3.0.4 (2022-09-12)
 
