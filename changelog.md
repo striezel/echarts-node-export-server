@@ -10,7 +10,7 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
-## Version 4.0.0-pre (2022-09-??)
+## Version 4.0.0 (2022-09-21)
 
 * __[breaking change]__
 __Support for Node.js 8, Node.js 9, Node.js 10, and Node.js 11 is dropped.__
