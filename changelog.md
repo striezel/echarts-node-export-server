@@ -21,7 +21,7 @@ of life on 2018-06-30, Node.js 10 reached its end of life on 2021-04-30, Node.js
 anymore by the Node.js developers. If you are still using older versions of
 Node.js, then please consider updating to a newer one.
 * __[breaking change]__
-Update dependency `canvas` to 9.0.0. This version of `canvas` drops support for
+Update dependency `uuid` to 9.0.0. This version of `uuid` drops support for
 Node.js 10 (and earlier).
 
 ## Version 3.0.4 (2022-09-12)
