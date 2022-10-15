@@ -10,6 +10,11 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 4.0.1 (2022-10-16)
+
+* __[maintenance]__
+Update dependencies `nan` to 2.17.0, and `semver` to 7.3.8.
+
 ## Version 4.0.0 (2022-09-21)
 
 * __[breaking change]__
