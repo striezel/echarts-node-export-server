@@ -15,6 +15,10 @@ change in this application.
 * __[maintenance]__
 Update dependency `canvas` to 2.10.2.
 
+Note: `canvas` 2.10.2 is the first version which has prebuilds for Node.js 16
+and Node.js 18, so the initial npm install should now work smoother for people
+using those versions of Node.js.
+
 ## Version 4.1.0 (2022-10-16)
 
 __[improvement]__
