@@ -1,6 +1,6 @@
 {
   "name": "echarts-node-export-server",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "ECharts Node.js export server",
   "repository": {
     "url": "https://gitlab.com/striezel/echarts-node-export-server.git",
@@ -22,7 +22,7 @@
   "author": "Dirk Stolle <striezel-dev@web.de>",
   "license": "GPL-3.0",
   "dependencies": {
-    "canvas": "^2.10.1",
+    "canvas": "^2.10.2",
     "uuid": "^9.0.0"
   },
   "engines": {
