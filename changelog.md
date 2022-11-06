@@ -10,6 +10,11 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 4.1.2 (2022-11-06)
+
+* __[maintenance]__
+Update dependency `tar` to 6.1.12.
+
 ## Version 4.1.1 (2022-10-31)
 
 * __[maintenance]__
