@@ -1,6 +1,6 @@
 /*
     ECharts offline image export server with Node.js
-    Copyright (C) 2018, 2021, 2022  Dirk Stolle
+    Copyright (C) 2018, 2021, 2022, 2023  Dirk Stolle
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 
 var fs = require('fs');
 const { createCanvas } = require('canvas');
-const echarts = require('./echarts.v5.4.1.min.js');
+const echarts = require('./echarts.v5.4.2.min.js');
 const { v4: uuidv4 } = require('uuid');
 
 
