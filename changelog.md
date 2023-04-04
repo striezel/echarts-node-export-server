@@ -10,6 +10,11 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 4.1.13 (2023-04-04)
+
+* __[maintenance]__
+Update dependency `canvas` to 2.11.2.
+
 ## Version 4.1.12 (2023-03-25)
 
 * __[improvement]__
