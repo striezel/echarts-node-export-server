@@ -10,6 +10,14 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 4.1.15 (2023-04-12)
+
+* __[maintenance]__
+Update dependency `minipass` to 4.2.8.
+
+* __[maintenance]__
+Update dependency `semver` to 7.4.0.
+
 ## Version 4.1.14 (2023-04-09)
 
 * __[maintenance]__
