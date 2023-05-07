@@ -10,6 +10,14 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 4.1.17 (2023-05-07)
+
+* __[maintenance]__
+Update dependency `tar` to 6.1.14.
+
+* __[maintenance]__
+Update dependency `minipass` to 5.0.0.
+
 ## Version 4.1.16 (2023-04-17)
 
 * __[maintenance]__
