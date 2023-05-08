@@ -24,6 +24,8 @@ const path = require('path');
 const ssr = require('./ssr.js');
 const url = require('url');
 const { v4: uuidv4 } = require('uuid');
+const {S3} = require('@aws-sdk/client-s3');
+const {PutObjectCommand} = require("@aws-sdk/client-s3");
 
 // Use hostname from environment variable HOST, if it is set.
 const hostname = process.env.HOST || 'localhost';
@@ -41,6 +43,17 @@ if (process.env.PORT) {
 }
 const port = (parsedPort && parsedPort > 0 && parsedPort < 65536) ? parsedPort : 3000;
 
+
+const client = new S3(
+  {
+    endpoint: process.env.AWS_S3_ENDPOINT,
+    region: process.env.AWS_DEFAULT_REGION,
+    credentials: {
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+    }
+  }
+  );
 
 const server = http.createServer(function(req, res) {
   // ---- Handle PNG and SVG file requests ----
@@ -120,11 +133,11 @@ const server = http.createServer(function(req, res) {
       // Try to parse into JSON to check validity.
       const jsObject = JSON.parse(body);
     } catch (e) {
-        res.statusCode = 400; // 400 == Bad Request
-        res.setHeader('Content-Type', 'text/plain');
-        res.end('Post data is not valid JSON!\n');
-        killed = true;
-        return;
+      res.statusCode = 400; // 400 == Bad Request
+      res.setHeader('Content-Type', 'text/plain');
+      res.end('Post data is not valid JSON!\n');
+      killed = true;
+      return;
     }
     if (killed) {
       return;
@@ -139,6 +152,16 @@ const server = http.createServer(function(req, res) {
       res.statusCode = 500; // 500 == Internal Server Error
     }
     res.setHeader('Content-Type', 'application/json');
+
+    if (req.headers["x-s3-enabled"] == 'true') {
+      const command = new PutObjectCommand({
+        Bucket: process.env.AWS_BUCKET,
+        Key: filename,
+        Body: new Uint8Array(fs.readFileSync(filename)),
+      });
+      client.send(command);
+    }
+
     res.end(JSON.stringify(result));
   });
 });
