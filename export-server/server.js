@@ -1,6 +1,6 @@
 /*
     ECharts offline image export server with Node.js
-    Copyright (C) 2018, 2021, 2022  Dirk Stolle
+    Copyright (C) 2018, 2021, 2022, 2023  Dirk Stolle
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -43,44 +43,13 @@ const port = (parsedPort && parsedPort > 0 && parsedPort < 65536) ? parsedPort :
 
 
 const server = http.createServer(function(req, res) {
-  // ---- Handle PNG and SVG file requests ----
+  // ---- Handle invalid URL requests ----
   const file = url.parse(req.url);
   if (file.pathname !== '/') {
-    // It is a file request.
-    let realPath = file.pathname.slice(1);
-    // Avoid directory traversal.
-    if ((realPath.indexOf('/') !== -1) || (realPath.indexOf('\\') !== -1)) {
-      res.statusCode = 403;
-      res.setHeader('Content-Type', 'text/plain');
-      return res.end('Forbidden');
-    }
-    // Avoid access to any non-PNG files.
-    const is_png = realPath.endsWith('.png');
-    const is_svg = realPath.endsWith('.svg');
-    if (!is_png && !is_svg) {
-      res.statusCode = 403;
-      res.setHeader('Content-Type', 'text/plain');
-      return res.end('Only requests to PNG and SVG files are allowed.');
-    }
-    var s = fs.createReadStream(realPath);
-    s.on('open', function () {
-        if (is_png) {
-          res.setHeader('Content-Type', 'image/png');
-        } else {
-          res.setHeader('Content-Type', 'image/svg+xml');
-        }
-        res.statusCode = 200; // 200 == OK
-        s.pipe(res);
-    });
-    s.on('end', function () {
-        res.end();
-    });
-    s.on('error', function () {
-        res.setHeader('Content-Type', 'text/plain');
-        res.statusCode = 404;
-        res.end('Not found');
-    });
-    return;
+    // It is an invalid file request.
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'text/plain');
+    return res.end('Not found\n\nImage generation request must be POSTed directly to the server\'s root path.');
   }
 
   // ---- Handle plot generation requests ----
@@ -120,11 +89,11 @@ const server = http.createServer(function(req, res) {
       // Try to parse into JSON to check validity.
       const jsObject = JSON.parse(body);
     } catch (e) {
-        res.statusCode = 400; // 400 == Bad Request
-        res.setHeader('Content-Type', 'text/plain');
-        res.end('Post data is not valid JSON!\n');
-        killed = true;
-        return;
+      res.statusCode = 400; // 400 == Bad Request
+      res.setHeader('Content-Type', 'text/plain');
+      res.end('Post data is not valid JSON!\n');
+      killed = true;
+      return;
     }
     if (killed) {
       return;
@@ -135,11 +104,30 @@ const server = http.createServer(function(req, res) {
     const result = ssr.render(body, filename, req.headers["x-image-width"], req.headers["x-image-height"]);
     if (result.success) {
       res.statusCode = 200; // 200 == OK
+      var stream = fs.createReadStream(result.filename);
+      stream.on('open', function() {
+        res.setHeader('Content-Type', (do_svg ? 'image/svg+xml' : 'image/png'));
+        stream.pipe(res);
+      });
+      stream.on('close', function() {
+        res.end();
+        fs.unlink(result.filename, function(err) {
+          if (err) {
+            console.error('Failed to unlink file ' + result.filename + '! ' + err.toString());
+          }
+        });
+      });
+      stream.on('error', function(err) {
+        res.statusCode = 500; // 500 == Internal Server Error
+        res.setHeader('Content-Type', 'text/plain');
+        res.end('Failed to serve file due to I/O error.\n');
+        console.error('Failed to serve file ' + result.filename + ': ' + err.toString());
+      });
     } else {
       res.statusCode = 500; // 500 == Internal Server Error
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(result));
     }
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(result));
   });
 });
 
