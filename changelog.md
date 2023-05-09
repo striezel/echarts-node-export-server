@@ -10,7 +10,7 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
-## Version 5.0.0-pre (2023-05-09)
+## Version 5.0.0 (2023-05-09)
 
 * __[breaking change]__
 Generated image files are now served directly in the response to the request
