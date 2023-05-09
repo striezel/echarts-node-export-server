@@ -43,44 +43,13 @@ const port = (parsedPort && parsedPort > 0 && parsedPort < 65536) ? parsedPort :
 
 
 const server = http.createServer(function(req, res) {
-  // ---- Handle PNG and SVG file requests ----
+  // ---- Handle invalid URL requests ----
   const file = url.parse(req.url);
   if (file.pathname !== '/') {
-    // It is a file request.
-    let realPath = file.pathname.slice(1);
-    // Avoid directory traversal.
-    if ((realPath.indexOf('/') !== -1) || (realPath.indexOf('\\') !== -1)) {
-      res.statusCode = 403;
-      res.setHeader('Content-Type', 'text/plain');
-      return res.end('Forbidden');
-    }
-    // Avoid access to any non-PNG files.
-    const is_png = realPath.endsWith('.png');
-    const is_svg = realPath.endsWith('.svg');
-    if (!is_png && !is_svg) {
-      res.statusCode = 403;
-      res.setHeader('Content-Type', 'text/plain');
-      return res.end('Only requests to PNG and SVG files are allowed.');
-    }
-    var s = fs.createReadStream(realPath);
-    s.on('open', function () {
-        if (is_png) {
-          res.setHeader('Content-Type', 'image/png');
-        } else {
-          res.setHeader('Content-Type', 'image/svg+xml');
-        }
-        res.statusCode = 200; // 200 == OK
-        s.pipe(res);
-    });
-    s.on('end', function () {
-        res.end();
-    });
-    s.on('error', function () {
-        res.setHeader('Content-Type', 'text/plain');
-        res.statusCode = 404;
-        res.end('Not found');
-    });
-    return;
+    // It is an invalid file request.
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'text/plain');
+    return res.end('Not found\n\nImage generation request must be POSTed directly to the server\'s root path.');
   }
 
   // ---- Handle plot generation requests ----
