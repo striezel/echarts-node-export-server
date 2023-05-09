@@ -89,11 +89,11 @@ const server = http.createServer(function(req, res) {
       // Try to parse into JSON to check validity.
       const jsObject = JSON.parse(body);
     } catch (e) {
-        res.statusCode = 400; // 400 == Bad Request
-        res.setHeader('Content-Type', 'text/plain');
-        res.end('Post data is not valid JSON!\n');
-        killed = true;
-        return;
+      res.statusCode = 400; // 400 == Bad Request
+      res.setHeader('Content-Type', 'text/plain');
+      res.end('Post data is not valid JSON!\n');
+      killed = true;
+      return;
     }
     if (killed) {
       return;
