@@ -258,7 +258,7 @@ Update dependencies `graceful-fs` to 4.2.10, `mime-db` to 1.52.0, `mime-type` to
 
 * __[maintenance]__
 Update dependency `minimist` to 1.26.0.
-This fixes a prototype pollution vulnerabilty in the `minimist` package,
+This fixes a prototype pollution vulnerability in the `minimist` package,
 [CVE-2021-44906](https://nvd.nist.gov/vuln/detail/CVE-2021-44906).
 
 ## Version 2.1.3 (2022-01-22)
