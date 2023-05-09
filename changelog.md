@@ -10,6 +10,27 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 5.0.0-pre (2023-05-09)
+
+* __[breaking change]__
+Generated image files are now served directly in the response to the request
+instead of just providing a JSON response that contains the file name of the
+generated image. That is, instead of returning a JSON response like
+```json
+{
+  "success": true,
+  "filename": "graph-4a8d8e1d-eef8-4593-bd4c-422866243121.png"
+}
+```
+the image is returned directly in the HTTP response message body.
+
+This approach has several advantages:
+* Users only need to make one request to the server instead of two to get the
+  generated image.
+* The server does not get filled with generated images files as in previous
+  versions, because the images do not need to be stored for later retrieval
+  anymore.
+
 ## Version 4.1.18 (2023-05-09)
 
 * __[maintenance]__

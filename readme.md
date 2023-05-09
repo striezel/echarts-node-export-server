@@ -93,19 +93,11 @@ For example, POSTing the following JSON code to the server
       }]
     }
 
-will generate a JSON response like e.g.:
-
-    {
-      "success": true,
-      "filename": "graph-4a8d8e1d-eef8-4593-bd4c-422866243121.png"
-    }
-
-The field _filename_ in the response indicates the location of the generated
-image file on the server. In the example above you could then get the image from
-<http://localhost:3000/graph-4a8d8e1d-eef8-4593-bd4c-422866243121.png>. Given
-the data above the image would look like this:
+will generate a PNG image that looks like this:
 
 ![Generated image example](./documentation/graph-4a8d8e1d-eef8-4593-bd4c-422866243121.png)
+
+The generated image will be contained in the response message body.
 
 ### Adjusting the width and height of the generated image
 
