@@ -1,7 +1,7 @@
 # Installation of Node.js
 
 Since this a Node.js application, Node.js is obviously required to run it.
-I recommend to use the LTS version of Node.js, which is currently version 14.
+I recommend to use the LTS version of Node.js, which is currently version 18.
 This is also the version under which this application has been developed and
 tested. Therefore, using an older version of Node.js may work, but it is not
 recommended.
@@ -12,7 +12,7 @@ installer package and install it.
 
 ## Node.js on Linux
 If your Linux distribution does not provide a recent Node.js version (at least
-version 14 is recommended), you can add an (unofficial) Node.js package
+version 16 is recommended), you can add an (unofficial) Node.js package
 repository to your system.
 
 ### Debian-based
@@ -20,15 +20,15 @@ repository to your system.
 On Debian-based systems create the file **/etc/apt/sources.list.d/nodejs.list**
 and give it the following contents:
 
-    # Node.js 14.x for Debian 11 (codename bullseye)
-    deb https://deb.nodesource.com/node_14.x bullseye main
-    deb-src https://deb.nodesource.com/node_14.x bullseye main
+    # Node.js 16.x for Debian 11 (codename bullseye)
+    deb https://deb.nodesource.com/node_16.x bullseye main
+    deb-src https://deb.nodesource.com/node_16.x bullseye main
 
 After that do
 
-    apt-get update && apt-get upgrade
+    apt-get update
 
-to update the APT package lists. To install Node.js 14, type
+to update the APT package lists. To install Node.js 16, type
 
     apt-get install nodejs
 
@@ -38,7 +38,7 @@ That's it.
 
 On a RedHat-based system (e.g. CentOS) make sure curl is installed and then type
 
-    curl -sL https://rpm.nodesource.com/setup_14.x | bash -
+    curl -sL https://rpm.nodesource.com/setup_16.x | bash -
 
 to download and execute a bash script that will take care of the installation.
 You might want to check the script code before doing that, though.
