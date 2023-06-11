@@ -21,10 +21,24 @@ On Debian-based systems create the file **/etc/apt/sources.list.d/nodejs.list**
 and give it the following contents:
 
     # Node.js 16.x for Debian 11 (codename bullseye)
-    deb https://deb.nodesource.com/node_16.x bullseye main
-    deb-src https://deb.nodesource.com/node_16.x bullseye main
+    deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_16.x bullseye main
+    deb-src [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_16.x bullseye main
 
-After that do
+Furthermore, the package signing key for that package repository needs to be
+imported. You will need `wget` (or `curl`) and `gpg` for that. They should be
+installed on most systems, but if they aren't, a simple
+
+    apt-get install wget gpg
+
+will take care of that.
+After that the package signing key can be downloaded and installed with
+
+    wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor > /usr/share/keyrings/nodesource.gpg
+
+This downloads the key with `wget`, converts it into the proper format using
+`gpg` and saves it as `/usr/share/keyrings/nodesource.gpg`.
+
+Next, run
 
     apt-get update
 
