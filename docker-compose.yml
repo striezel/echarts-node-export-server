@@ -1,0 +1,32 @@
+# https://docs.min.io/docs/deploy-minio-on-docker-compose.html
+version: "3.7"
+
+services:
+  chart-server:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:11000"
+    hostname: chart-server
+    networks:
+      - chart_nw
+
+  nginx:
+    image: nginx:latest
+    hostname: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./var/live/chart-server.mediumroast.io/fullchain.pem:/etc/nginx/certs/fullchain.pem:ro
+      - ./var/live/chart-server.mediumroast.io/privkey.pem:/etc/nginx/certs/privkey.pem:ro
+    ports:
+      - "11000:11000"
+    depends_on:
+      - chart-server 
+    networks:
+      - chart_nw
+
+networks:
+  chart_nw:
+    driver: bridge
+
