@@ -4,16 +4,10 @@
 
 If you prefer the non-native approach and like to use Docker instead, you have
 to make sure that Docker is installed. For the purpose of this installation,
-we will assume that you are using Debian 8.0 "jessie". The required steps should
-be similar on other Linux distributions.
+we will assume that you are using Debian 11 (codename "bullseye"). The required
+steps should be similar on other Linux distributions.
 
-To install Docker, you need to add the APT repository for jessie-backports to
-your APT sources, if that has not been done yet. Execute the following command
-as root user to add the AP repository:
-
-    echo "deb http://ftp.de.debian.org/debian/ jessie-backports main" >> /etc/apt/sources.list
-
-After that you can install Docker by typing the following commands:
+On a Debian 11 system you can install Docker by typing the following commands:
 
     # update of package lists
     apt-get update
@@ -33,10 +27,6 @@ users might need to log off and on again before they can continue.
 
 Furthermore you should restart the Docker daemon:
 
-    systemctl start docker
-
-or
-
     systemctl restart docker
 
 should trigger the restart.
@@ -47,7 +37,7 @@ After that the user _user1_ can type
 
 into a terminal in order to check whether he/she can execute docker commands in
 his/her user context. If the command displays an error, then something is not
-quite right yet.
+quite right yet. (Forgot to log off and on again?)
 
 ## Let's party: Build docker image and create container
 
