@@ -10,6 +10,11 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 5.0.4 (2023-07-01)
+
+* __[maintenance]__
+Update dependency `node-fetch` to 2.6.12.
+
 ## Version 5.0.3 (2023-06-28)
 
 * __[maintenance]__
