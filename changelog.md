@@ -10,6 +10,11 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 5.0.5 (2023-07-10)
+
+* __[maintenance]__
+Update dependency `semver` to 7.5.4.
+
 ## Version 5.0.4 (2023-07-01)
 
 * __[maintenance]__
