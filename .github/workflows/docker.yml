@@ -1,0 +1,25 @@
+name: Build Dockerfile
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Build Dockerfile
+        run: docker build . -t exportapp
+      - name: Start Docker container
+        run: |
+          CONTAINER_ID=$(docker run --rm -d -p 3000:3000 --net=host exportapp)
+          while ! netstat -tna | grep LISTEN | grep --silent 3000
+          do
+            echo Waiting for Node.js server to start ...
+            sleep 5
+          done
+          netstat -tulpen
+          docker logs "$CONTAINER_ID"
+          curl -X POST -H 'X-Image-Format: svg' -i 'http://127.0.0.1:3000/' --data '{"title": {"text": "ECharts entry example"}, "tooltip": {}, "legend": {"data": ["Sales"]}, "backgroundColor": "#ffffff", "xAxis": {"data": ["shirt","cardigan","chiffon shirt","pants","heels","socks"]}, "yAxis": {}, "series": [{"name": "Sales","type": "bar", "data": [5,20,36,10,10,20] }]}'
+          echo -e "\nStopping container ..."
+          docker stop -t 1 "$CONTAINER_ID"
