@@ -10,7 +10,14 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
-## Version 5.0.8-pre (2023-07-20)
+## Version 5.0.8 (2023-07-20)
+
+* __[improvement]__
+  The ECharts library is updated from version 5.4.2 to version 5.4.3.
+  ECharts 5.4.3 brings several fixes and a few new features, compared to 5.4.2.
+  For a full list of those see the release notes of ECharts:
+
+  [Changes in ECharts 5.4.3](https://github.com/apache/echarts/releases/tag/5.4.3)
 
 * __[maintenance]__
 Update dependency `detect-libc` to 2.0.2.
