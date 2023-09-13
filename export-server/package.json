@@ -23,7 +23,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "canvas": "^2.11.2",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.1"
   },
   "engines": {
     "node": ">=12"
