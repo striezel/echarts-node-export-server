@@ -37,3 +37,13 @@ node_18:
   script:
     - cd ./export-server
     - npm install
+
+node_20:
+  image: node:20-slim
+  stage: build
+  before_script:
+    - node --version
+    - npm --version
+  script:
+    - cd ./export-server
+    - npm install
