@@ -10,6 +10,11 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 5.0.11 (2023-11-29)
+
+* __[bug fix]__
+Fix error in handling of unusually large payloads.
+
 ## Version 5.0.10 (2023-09-15)
 
 * __[maintenance]__

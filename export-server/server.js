@@ -73,7 +73,7 @@ const server = http.createServer(function(req, res) {
       res.statusCode = 413; // 413 == Payload Too Large
       res.setHeader('Content-Type', 'text/plain');
       res.end('Request size exceeds reasonable limits!\n');
-      req.connecion.destroy();
+      req.connection.destroy();
       killed = true;
       return;
     }
