@@ -10,6 +10,17 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 5.0.12 (2023-11-30)
+
+* __[improvement]__
+Whenever the server responds to an unallowed method with HTTP status code 405,
+it will now also send an `Allow` HTTP header to indicate the allowed methods.
+This behaviour is required by [RFC 9110](https://httpwg.org/specs/rfc9110.html#status.405),
+so it should be implemented.
+
+Furthermore, any HTTP request to the server root using the OPTIONS method will
+now return the allowed options via an `Allow` HTTP header.
+
 ## Version 5.0.11 (2023-11-29)
 
 * __[bug fix]__

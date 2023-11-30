@@ -54,10 +54,17 @@ const server = http.createServer(function(req, res) {
 
   // ---- Handle plot generation requests ----
 
+  if (req.method === 'OPTIONS') {
+    res.statusCode = 204; // 204 == No content
+    res.setHeader('Allow', 'POST');
+    res.end();
+    return;
+  }
   // Only post request shall be allowed.
   if (req.method !== 'POST') {
     res.statusCode = 405; // 405 == Method not allowed
     res.setHeader('Content-Type', 'text/plain');
+    res.setHeader('Allow', 'POST');
     res.end('Only POST requests are allowed!\n');
     return;
   }
