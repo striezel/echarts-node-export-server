@@ -35,8 +35,10 @@ node_18:
     - node --version
     - npm --version
   script:
+    - apt-get update && apt-get install -y procps
     - cd ./export-server
     - npm install
+    - ./test.sh
 
 node_20:
   image: node:20-slim
@@ -45,5 +47,7 @@ node_20:
     - node --version
     - npm --version
   script:
+    - apt-get update && apt-get install -y procps
     - cd ./export-server
     - npm install
+    - ./test.sh
