@@ -1,6 +1,6 @@
 /*
     ECharts offline image export server with Node.js
-    Copyright (C) 2018, 2021, 2022, 2023  Dirk Stolle
+    Copyright (C) 2018, 2021, 2022, 2023, 2024  Dirk Stolle
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26,9 +26,9 @@ const { v4: uuidv4 } = require('uuid');
 
    Parameters:
      jsonData - (string) the JSON data required by ECharts
-     filename - (string) desired output file name for the PNG file
-     width    - (number) width of the PNG file in pixels
-     height   - (number) height of the PNG file in pixels
+     filename - (string) desired output file name for the SVG file
+     width    - (number) width of the SVG file in pixels
+     height   - (number) height of the SVG file in pixels
 
    Returns:
      object that contains two members:
