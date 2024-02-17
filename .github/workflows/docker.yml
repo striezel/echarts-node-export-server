@@ -25,13 +25,6 @@ jobs:
           curl -X POST -H 'X-Image-Format: svg' -i 'http://127.0.0.1:3000/' --data '{"title": {"text": "ECharts entry example"}, "tooltip": {}, "legend": {"data": ["Sales"]}, "backgroundColor": "#ffffff", "xAxis": {"data": ["shirt","cardigan","chiffon shirt","pants","heels","socks"]}, "yAxis": {}, "series": [{"name": "Sales","type": "bar", "data": [5,20,36,10,10,20] }]}'
           echo -e "\nStopping container ..."
           docker stop -t 1 "$CONTAINER_ID"
-      - name: Push Docker image (edge) to registry
-        run: |
-          IMAGE_NAME=ghcr.io/${{ github.repository_owner }}/echarts-node-export-server/echarts-node-export-server:edge
-          docker tag exportapp "$IMAGE_NAME"
-          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-          docker push "$IMAGE_NAME"
-          docker logout ghcr.io
       - name: Push Docker image (versioned tag) to registry
         run: |
           VERSION=$(git describe --always)
