@@ -51,3 +51,15 @@ node_20:
     - cd ./export-server
     - npm install
     - ./test.sh
+
+node_22:
+  image: node:22-slim
+  stage: build
+  before_script:
+    - node --version
+    - npm --version
+  script:
+    - apt-get update && apt-get install -y procps
+    - cd ./export-server
+    - npm install
+    - ./test.sh
