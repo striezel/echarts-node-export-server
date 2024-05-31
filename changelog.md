@@ -10,6 +10,11 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 5.1.4 (2024-05-31)
+
+* __[maintenance]__
+Update dependency `debug` to 4.3.5.
+
 ## Version 5.1.3 (2024-05-28)
 
 * __[maintenance]__
