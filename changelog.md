@@ -10,6 +10,19 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 6.0.0-pre (2024-06-30)
+
+* __[breaking change]__
+__Support for Node.js 12, Node.js 13, Node.js 14, and Node.js 15 is dropped.__
+The minimum required version is now Node.js 16.
+These old Node.js versions have reached their end of life. All those versions
+are not maintained anymore by the Node.js developers. If you are still using
+older versions of Node.js, then please consider updating to a newer one.
+
+* __[breaking change]__
+Update dependency `uuid` to 10.0.0. This version of `uuid` drops support for
+Node.js 14 (and earlier versions).
+
 ## Version 5.1.6 (2024-06-28)
 
 * __[improvement]__
