@@ -1,6 +1,6 @@
 {
   "name": "echarts-node-export-server",
-  "version": "6.0.2",
+  "version": "6.0.3",
   "description": "ECharts Node.js export server",
   "repository": {
     "url": "https://gitlab.com/striezel/echarts-node-export-server.git",
