@@ -24,8 +24,8 @@ RUN wget https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key && \
     cat nodesource-repo.gpg.key | gpg --dearmor -o /usr/share/keyrings/nodesource.gpg && \
     chmod 644 /usr/share/keyrings/nodesource.gpg && \
     unlink nodesource-repo.gpg.key && \
-    echo "# Node.js 18.x for Debian 12" > /etc/apt/sources.list.d/nodejs.list \
-    && echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_18.x nodistro main" >> /etc/apt/sources.list.d/nodejs.list && \
+    echo "# Node.js 20.x for Debian 12" > /etc/apt/sources.list.d/nodejs.list \
+    && echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" >> /etc/apt/sources.list.d/nodejs.list && \
     apt-get update && apt-get install --no-install-recommends -y nodejs
 # Create directory for application.
 RUN mkdir -p /opt/export-server

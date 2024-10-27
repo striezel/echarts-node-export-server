@@ -13,7 +13,7 @@ change in this application.
 ## Version 6.?.? (2024-10-??)
 
 * __[maintenance]__
-Update Dockerfile to use Node.js 18 instead of Node.js 16.
+Update Dockerfile to use Node.js 20 instead of Node.js 16.
 Furthermore, the base image is updated from Debian 11 to Debian 12.
 
 ## Version 6.0.3 (2024-10-13)
