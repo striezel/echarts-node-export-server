@@ -1,4 +1,4 @@
-FROM debian:11-slim
+FROM debian:12-slim
 MAINTAINER Dirk Stolle <striezel-dev@web.de>
 
 LABEL org.opencontainers.image.authors="Dirk Stolle <striezel-dev@web.de>"
@@ -10,6 +10,7 @@ LABEL org.opencontainers.image.licenses=GPL-3.0-or-later
 # wget, GnuPG and CA certificates are needed to get the key for the Nodesource
 # APT repository.
 # Finally, libfontconfig is required during execution to get font rendering.
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install --no-install-recommends -y \
         apt-transport-https \
@@ -19,11 +20,13 @@ RUN apt-get update && apt-get upgrade -y && \
         ca-certificates \
         libfontconfig1
 # Node.js is required to run this application.
-RUN echo "# Node.js 16.x for Debian 11 (codename bullseye)" > /etc/apt/sources.list.d/nodejs.list \
-  && echo "deb https://deb.nodesource.com/node_16.x bullseye main" >> /etc/apt/sources.list.d/nodejs.list \
-  && echo "deb-src https://deb.nodesource.com/node_16.x bullseye main" >> /etc/apt/sources.list.d/nodejs.list
-RUN apt-key adv --fetch-keys https://deb.nodesource.com/gpgkey/nodesource.gpg.key
-RUN apt-get update && apt-get install --no-install-recommends -y nodejs
+RUN wget https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key && \
+    cat nodesource-repo.gpg.key | gpg --dearmor -o /usr/share/keyrings/nodesource.gpg && \
+    chmod 644 /usr/share/keyrings/nodesource.gpg && \
+    unlink nodesource-repo.gpg.key && \
+    echo "# Node.js 18.x for Debian 12" > /etc/apt/sources.list.d/nodejs.list \
+    && echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_18.x nodistro main" >> /etc/apt/sources.list.d/nodejs.list && \
+    apt-get update && apt-get install --no-install-recommends -y nodejs
 # Create directory for application.
 RUN mkdir -p /opt/export-server
 # Copy all files to that directory.
