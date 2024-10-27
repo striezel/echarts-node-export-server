@@ -22,7 +22,7 @@ jobs:
           done
           netstat -tulpen
           docker logs "$CONTAINER_ID"
-          curl -X POST -H 'X-Image-Format: svg' -i 'http://127.0.0.1:3000/' --data '{"title": {"text": "ECharts entry example"}, "tooltip": {}, "legend": {"data": ["Sales"]}, "backgroundColor": "#ffffff", "xAxis": {"data": ["shirt","cardigan","chiffon shirt","pants","heels","socks"]}, "yAxis": {}, "series": [{"name": "Sales","type": "bar", "data": [5,20,36,10,10,20] }]}'
+          curl -X POST -H 'X-Image-Format: svg' -i 'http://localhost:3000/' --data '{"title": {"text": "ECharts entry example"}, "tooltip": {}, "legend": {"data": ["Sales"]}, "backgroundColor": "#ffffff", "xAxis": {"data": ["shirt","cardigan","chiffon shirt","pants","heels","socks"]}, "yAxis": {}, "series": [{"name": "Sales","type": "bar", "data": [5,20,36,10,10,20] }]}'
           echo -e "\nStopping container ..."
           docker stop -t 1 "$CONTAINER_ID"
       - name: Push Docker image (versioned tag) to registry
