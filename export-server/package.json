@@ -1,6 +1,6 @@
 {
   "name": "echarts-node-export-server",
-  "version": "6.0.4",
+  "version": "6.0.5",
   "description": "ECharts Node.js export server",
   "repository": {
     "url": "https://gitlab.com/striezel/echarts-node-export-server.git",
@@ -23,7 +23,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "canvas": "^2.11.2",
-    "uuid": "^11.0.1"
+    "uuid": "^11.0.2"
   },
   "engines": {
     "node": ">=16"
