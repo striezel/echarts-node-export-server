@@ -10,6 +10,12 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version ?.?.? (2024-11-??)
+
+* __[maintenance]__
+Update Dockerfile to use Node.js 22 instead of Node.js 20. Node.js 22 is the
+current active LTS release of Node.js.
+
 ## Version 6.0.5 (2024-10-29)
 
 * __[maintenance]__
