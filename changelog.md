@@ -10,6 +10,11 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 6.0.6 (2024-11-11)
+
+* __[maintenance]__
+Update dependency `uuid` to 11.0.3.
+
 ## Version 6.0.5 (2024-10-29)
 
 * __[maintenance]__
