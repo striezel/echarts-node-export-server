@@ -22,7 +22,7 @@
   "author": "Dirk Stolle <striezel-dev@web.de>",
   "license": "GPL-3.0",
   "dependencies": {
-    "canvas": "^2.11.2",
+    "canvas": "^3.0.0",
     "uuid": "^11.0.3"
   },
   "engines": {
