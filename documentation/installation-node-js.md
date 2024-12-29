@@ -82,7 +82,7 @@ Basically, it boils down to one of the following commands:
 | ------------ | ------------------------------------------------------------- |
 | Alpine Linux | apk update && apk add g++ make pkgconf cairo-dev pango-dev    |
 | Debian       | apt-get install build-essential libcairo2-dev libpango1.0-dev |
-| Fedora       | yum install yum gcc-c++ cairo-devel pango-devel
+| Fedora       | yum install gcc-c++ cairo-devel pango-devel                   |
 
 After all dependencies for compilation of `canvas` are installed, `npm install`
 will succeed.
