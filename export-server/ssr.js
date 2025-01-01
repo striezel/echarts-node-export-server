@@ -17,7 +17,7 @@
 */
 
 const { createCanvas } = require('canvas');
-const echarts = require('./echarts.v5.5.1.min.js');
+const echarts = require('./echarts.v5.6.0.min.js');
 
 
 /* Renders JSON data for a ECharts plot into a SVG image.

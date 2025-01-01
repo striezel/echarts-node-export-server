@@ -15,6 +15,13 @@ change in this application.
 * __[improvement]__
 The image rendering process is simplified and does now use less I/O operations.
 
+* __[improvement]__
+  The ECharts library is updated from version 5.5.1 to version 5.6.0.
+  ECharts 5.6.0 brings several fixes and a new features, compared to 5.5.1.
+  For a full list of those see the release notes of ECharts:
+
+  [Changes in ECharts 5.6.0](https://github.com/apache/echarts/releases/tag/5.6.0)
+
 * __[maintenance]__
 Update dependency `debug` to 4.4.0.
 

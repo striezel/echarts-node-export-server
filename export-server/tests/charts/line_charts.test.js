@@ -66,22 +66,22 @@ describe('Line charts', () => {
         
            <svg width="700" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 700 400">
 <rect width="700" height="400" x="0" y="0" fill="#ffffff"></rect>
-<path d="M70 330.5L630 330.5" fill="transparent" stroke="#E0E6F1" class="zr5-cls-20"></path>
-<path d="M70 285.5L630 285.5" fill="transparent" stroke="#E0E6F1" class="zr5-cls-20"></path>
-<path d="M70 240.5L630 240.5" fill="transparent" stroke="#E0E6F1" class="zr5-cls-20"></path>
-<path d="M70 195.5L630 195.5" fill="transparent" stroke="#E0E6F1" class="zr5-cls-20"></path>
-<path d="M70 150.5L630 150.5" fill="transparent" stroke="#E0E6F1" class="zr5-cls-20"></path>
-<path d="M70 105.5L630 105.5" fill="transparent" stroke="#E0E6F1" class="zr5-cls-20"></path>
-<path d="M70 60.5L630 60.5" fill="transparent" stroke="#E0E6F1" class="zr5-cls-20"></path>
-<path d="M70 330.5L630 330.5" fill="transparent" stroke="#6E7079" stroke-linecap="round" class="zr5-cls-20"></path>
-<path d="M70.5 330L70.5 335" fill="transparent" stroke="#6E7079" class="zr5-cls-20"></path>
-<path d="M150.5 330L150.5 335" fill="transparent" stroke="#6E7079" class="zr5-cls-20"></path>
-<path d="M230.5 330L230.5 335" fill="transparent" stroke="#6E7079" class="zr5-cls-20"></path>
-<path d="M310.5 330L310.5 335" fill="transparent" stroke="#6E7079" class="zr5-cls-20"></path>
-<path d="M390.5 330L390.5 335" fill="transparent" stroke="#6E7079" class="zr5-cls-20"></path>
-<path d="M470.5 330L470.5 335" fill="transparent" stroke="#6E7079" class="zr5-cls-20"></path>
-<path d="M550.5 330L550.5 335" fill="transparent" stroke="#6E7079" class="zr5-cls-20"></path>
-<path d="M630.5 330L630.5 335" fill="transparent" stroke="#6E7079" class="zr5-cls-20"></path>
+<path d="M70 330.5L630 330.5" fill="none" pointer-events="visible" stroke="#E0E6F1" class="zr2-cls-8"></path>
+<path d="M70 285.5L630 285.5" fill="none" pointer-events="visible" stroke="#E0E6F1" class="zr2-cls-8"></path>
+<path d="M70 240.5L630 240.5" fill="none" pointer-events="visible" stroke="#E0E6F1" class="zr2-cls-8"></path>
+<path d="M70 195.5L630 195.5" fill="none" pointer-events="visible" stroke="#E0E6F1" class="zr2-cls-8"></path>
+<path d="M70 150.5L630 150.5" fill="none" pointer-events="visible" stroke="#E0E6F1" class="zr2-cls-8"></path>
+<path d="M70 105.5L630 105.5" fill="none" pointer-events="visible" stroke="#E0E6F1" class="zr2-cls-8"></path>
+<path d="M70 60.5L630 60.5" fill="none" pointer-events="visible" stroke="#E0E6F1" class="zr2-cls-8"></path>
+<path d="M70 330.5L630 330.5" fill="none" pointer-events="visible" stroke="#6E7079" stroke-linecap="round" class="zr2-cls-8"></path>
+<path d="M70.5 330L70.5 335" fill="none" pointer-events="visible" stroke="#6E7079" class="zr2-cls-8"></path>
+<path d="M150.5 330L150.5 335" fill="none" pointer-events="visible" stroke="#6E7079" class="zr2-cls-8"></path>
+<path d="M230.5 330L230.5 335" fill="none" pointer-events="visible" stroke="#6E7079" class="zr2-cls-8"></path>
+<path d="M310.5 330L310.5 335" fill="none" pointer-events="visible" stroke="#6E7079" class="zr2-cls-8"></path>
+<path d="M390.5 330L390.5 335" fill="none" pointer-events="visible" stroke="#6E7079" class="zr2-cls-8"></path>
+<path d="M470.5 330L470.5 335" fill="none" pointer-events="visible" stroke="#6E7079" class="zr2-cls-8"></path>
+<path d="M550.5 330L550.5 335" fill="none" pointer-events="visible" stroke="#6E7079" class="zr2-cls-8"></path>
+<path d="M630.5 330L630.5 335" fill="none" pointer-events="visible" stroke="#6E7079" class="zr2-cls-8"></path>
 <text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(62 330)" fill="#6E7079">0</text>
 <text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(62 285)" fill="#6E7079">50</text>
 <text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(62 240)" fill="#6E7079">100</text>
@@ -96,33 +96,33 @@ describe('Line charts', () => {
 <text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(430 338)" fill="#6E7079">Fri</text>
 <text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(510 338)" fill="#6E7079">Sat</text>
 <text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(590 338)" fill="#6E7079">Sun</text>
-<g clip-path="url(#zr5-c0)">
-<path d="M110 195L190 123L270 128.4L350 133.8L430 208.5L510 197.7L590 96" fill="transparent" stroke="#5470c6" stroke-width="2" stroke-linejoin="bevel" class="zr5-cls-22"></path>
+<g clip-path="url(#zr2-c0)">
+<path d="M110 195L190 123L270 128.4L350 133.8L430 208.5L510 197.7L590 96" fill="none" pointer-events="visible" stroke="#5470c6" stroke-width="2" stroke-linejoin="bevel" class="zr2-cls-10"></path>
 </g>
-<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,110,195)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr5-cls-23"></path>
-<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,190,123)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr5-cls-23"></path>
-<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,270,128.4)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr5-cls-23"></path>
-<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,350,133.8)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr5-cls-23"></path>
-<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,430,208.5)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr5-cls-23"></path>
-<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,510,197.7)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr5-cls-23"></path>
-<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,590,96)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="6" ecmeta_ssr_type="chart" class="zr5-cls-23"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,110,195)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr2-cls-11"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,190,123)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr2-cls-11"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,270,128.4)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr2-cls-11"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,350,133.8)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr2-cls-11"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,430,208.5)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr2-cls-11"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,510,197.7)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr2-cls-11"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,590,96)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="6" ecmeta_ssr_type="chart" class="zr2-cls-11"></path>
 <defs >
-<clipPath id="zr5-c0">
-<path d="M69 59l562 0l0 272l-562 0Z" fill="#000" class="zr5-cls-21"></path>
+<clipPath id="zr2-c0">
+<path d="M69 59l562 0l0 272l-562 0Z" fill="#000" class="zr2-cls-9"></path>
 </clipPath>
 </defs>
 <style ><![CDATA[
-.zr5-cls-20:hover {
+.zr2-cls-8:hover {
 pointer-events:none;
 }
-.zr5-cls-21:hover {
+.zr2-cls-9:hover {
 cursor:pointer;
 fill:rgba(0,0,0,1);
 }
-.zr5-cls-22:hover {
+.zr2-cls-10:hover {
 cursor:pointer;
 }
-.zr5-cls-23:hover {
+.zr2-cls-11:hover {
 cursor:pointer;
 fill:rgba(255,255,255,1);
 }
@@ -137,37 +137,37 @@ fill:rgba(255,255,255,1);
         // Check partial matches, avoiding the random class / id bits.
         assert.ok(body.indexOf('<svg width="700" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 700 400">') >= 0);
         assert.ok(body.indexOf('<rect width="700" height="400" x="0" y="0" fill="#ffffff"></rect>') > 0);
-        assert.ok(body.indexOf(`<path d="M70 330.5L630 330.5" fill="transparent" stroke="#E0E6F1" class="`) > 0);
+        assert.ok(body.indexOf(`<path d="M70 330.5L630 330.5" fill="none" pointer-events="visible" stroke="#E0E6F1" class="`) > 0);
         assert.ok(body.indexOf(`"></path>
-<path d="M70 285.5L630 285.5" fill="transparent" stroke="#E0E6F1" class="`) > 0);
+<path d="M70 285.5L630 285.5" fill="none" pointer-events="visible" stroke="#E0E6F1" class="`) > 0);
         assert.ok(body.indexOf(`"></path>
-<path d="M70 240.5L630 240.5" fill="transparent" stroke="#E0E6F1" class="`) > 0);
+<path d="M70 240.5L630 240.5" fill="none" pointer-events="visible" stroke="#E0E6F1" class="`) > 0);
         assert.ok(body.indexOf(`"></path>
-<path d="M70 195.5L630 195.5" fill="transparent" stroke="#E0E6F1" class="`) > 0);
+<path d="M70 195.5L630 195.5" fill="none" pointer-events="visible" stroke="#E0E6F1" class="`) > 0);
         assert.ok(body.indexOf(`"></path>
-<path d="M70 150.5L630 150.5" fill="transparent" stroke="#E0E6F1" class="`) > 0);
+<path d="M70 150.5L630 150.5" fill="none" pointer-events="visible" stroke="#E0E6F1" class="`) > 0);
         assert.ok(body.indexOf(`"></path>
-<path d="M70 105.5L630 105.5" fill="transparent" stroke="#E0E6F1" class="`) > 0);
+<path d="M70 105.5L630 105.5" fill="none" pointer-events="visible" stroke="#E0E6F1" class="`) > 0);
         assert.ok(body.indexOf(`"></path>
-<path d="M70 60.5L630 60.5" fill="transparent" stroke="#E0E6F1" class="`) > 0);
+<path d="M70 60.5L630 60.5" fill="none" pointer-events="visible" stroke="#E0E6F1" class="`) > 0);
         assert.ok(body.indexOf(`"></path>
-<path d="M70 330.5L630 330.5" fill="transparent" stroke="#6E7079" stroke-linecap="round" class="`) > 0);
+<path d="M70 330.5L630 330.5" fill="none" pointer-events="visible" stroke="#6E7079" stroke-linecap="round" class="`) > 0);
         assert.ok(body.indexOf(`"></path>
-<path d="M70.5 330L70.5 335" fill="transparent" stroke="#6E7079" class="`) > 0);
+<path d="M70.5 330L70.5 335" fill="none" pointer-events="visible" stroke="#6E7079" class="`) > 0);
         assert.ok(body.indexOf(`"></path>
-<path d="M150.5 330L150.5 335" fill="transparent" stroke="#6E7079" class="`) > 0);
+<path d="M150.5 330L150.5 335" fill="none" pointer-events="visible" stroke="#6E7079" class="`) > 0);
         assert.ok(body.indexOf(`"></path>
-<path d="M230.5 330L230.5 335" fill="transparent" stroke="#6E7079" class="`) > 0);
+<path d="M230.5 330L230.5 335" fill="none" pointer-events="visible" stroke="#6E7079" class="`) > 0);
         assert.ok(body.indexOf(`"></path>
-<path d="M310.5 330L310.5 335" fill="transparent" stroke="#6E7079" class="`) > 0);
+<path d="M310.5 330L310.5 335" fill="none" pointer-events="visible" stroke="#6E7079" class="`) > 0);
         assert.ok(body.indexOf(`"></path>
-<path d="M390.5 330L390.5 335" fill="transparent" stroke="#6E7079" class="`) > 0);
+<path d="M390.5 330L390.5 335" fill="none" pointer-events="visible" stroke="#6E7079" class="`) > 0);
         assert.ok(body.indexOf(`"></path>
-<path d="M470.5 330L470.5 335" fill="transparent" stroke="#6E7079" class="`) > 0);
+<path d="M470.5 330L470.5 335" fill="none" pointer-events="visible" stroke="#6E7079" class="`) > 0);
         assert.ok(body.indexOf(`"></path>
-<path d="M550.5 330L550.5 335" fill="transparent" stroke="#6E7079" class="`) > 0);
+<path d="M550.5 330L550.5 335" fill="none" pointer-events="visible" stroke="#6E7079" class="`) > 0);
         assert.ok(body.indexOf(`"></path>
-<path d="M630.5 330L630.5 335" fill="transparent" stroke="#6E7079" class="`) > 0);
+<path d="M630.5 330L630.5 335" fill="none" pointer-events="visible" stroke="#6E7079" class="`) > 0);
         assert.ok(body.indexOf(`"></path>
 <text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(62 330)" fill="#6E7079">0</text>
 <text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:sans-serif;" transform="translate(62 285)" fill="#6E7079">50</text>
@@ -185,7 +185,7 @@ fill:rgba(255,255,255,1);
 <text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:sans-serif;" y="6" transform="translate(590 338)" fill="#6E7079">Sun</text>
 <g clip-path="url(#`) > 0);
         assert.ok(body.indexOf(`)">
-<path d="M110 195L190 123L270 128.4L350 133.8L430 208.5L510 197.7L590 96" fill="transparent" stroke="#5470c6" stroke-width="2" stroke-linejoin="bevel" class="`) > 0);
+<path d="M110 195L190 123L270 128.4L350 133.8L430 208.5L510 197.7L590 96" fill="none" pointer-events="visible" stroke="#5470c6" stroke-width="2" stroke-linejoin="bevel" class="`) > 0);
         assert.ok(body.indexOf(`"></path>
 </g>
 <path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(2,0,0,2,110,195)" fill="#fff" stroke="#5470c6" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="`) > 0);
