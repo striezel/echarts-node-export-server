@@ -1,6 +1,6 @@
 /*
     ECharts offline image export server with Node.js
-    Copyright (C) 2018, 2021, 2022, 2023, 2024  Dirk Stolle
+    Copyright (C) 2018, 2021, 2022, 2023, 2024, 2025  Dirk Stolle
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26,19 +26,17 @@ const { v4: uuidv4 } = require('uuid');
 
    Parameters:
      jsonData - (string) the JSON data required by ECharts
-     filename - (string) desired output file name for the SVG file
      width    - (number) width of the SVG file in pixels
      height   - (number) height of the SVG file in pixels
 
    Returns:
      object that contains two members:
        success - (boolean) indicates success of the rendering process
-       filename - (string) filename of the output, only present after successful
-                  rendering
+       data - (string) SVG data only present after successful rendering
        failure - (string) reason for render failure; only present after failed
                  rendering, may be cryptic and is not necessarily human-friendly
 */
-function render_svg(jsonData, filename, width, height) {
+function render_svg(jsonData, width, height) {
   const chart = echarts.init(null, null, {
     renderer: 'svg',
     ssr: true,
@@ -50,10 +48,9 @@ function render_svg(jsonData, filename, width, height) {
   chart.setOption(jsonData);
 
   const svg_data = chart.renderToSVGString();
-  fs.writeFileSync(filename, svg_data, {encoding: 'utf8', mode: 0o644, flag: 'w'});
   return {
     success: true,
-    filename: filename
+    data: svg_data
   };
 }
 
@@ -61,30 +58,27 @@ function render_svg(jsonData, filename, width, height) {
 
    Parameters:
      jsonData - (string) the JSON data required by ECharts
-     filename - (string) desired output file name for the PNG file
      width    - (number) width of the PNG file in pixels
      height   - (number) height of the PNG file in pixels
 
    Returns:
      object that contains two members:
        success - (boolean) indicates success of the rendering process
-       filename - (string) filename of the output, only present after successful
-                  rendering
+       data - (buffer) PNG data, only present after successful rendering
        failure - (string) reason for render failure; only present after failed
                  rendering, may be cryptic and is not necessarily human-friendly
 */
-function render_png(jsonData, filename, width, height) {
+function render_png(jsonData, width, height) {
   const canvas = createCanvas(width, height);
   const chart = echarts.init(canvas);
 
   jsonData.animation = false;
   chart.setOption(jsonData);
 
-  const data = canvas.toBuffer('image/png');
-  fs.writeFileSync(filename, data, {mode: 0o644, flag: 'w'});
+  const png_data = canvas.toBuffer('image/png');
   return {
     success: true,
-    filename: filename
+    data: png_data
   };
 }
 
@@ -92,32 +86,30 @@ function render_png(jsonData, filename, width, height) {
 
    Parameters:
      jsonData - (string) the JSON data required by ECharts
-     filename - (string) desired output file name for the PNG/SVG file
+     do_svg   - (boolean) whether to render into an SVG file (true) or a PNG
+                          file (false)
      width    - (number) width of the PNG file in pixels
      height   - (number) height of the PNG file in pixels
 
    Returns:
      object that contains two members:
        success - (boolean) indicates success of the rendering process
-       filename - (string) filename of the output, only present after successful
+       data    - (string | buffer) image data, only present after successful
                   rendering
        failure - (string) reason for render failure; only present after failed
                  rendering, may be cryptic and is not necessarily human-friendly
 */
-exports.render = function(jsonData, filename, width, height) {
-  if (!filename) {
-    filename = 'graph-' + uuidv4() + '.png';
-  }
+exports.render = function(jsonData, do_svg, width, height) {
   if (typeof jsonData !== 'string') {
     return {
       success: false,
       failure: 'json-not-a-string'
     };
   }
-  if (typeof filename !== 'string') {
+  if (typeof do_svg !== 'boolean') {
     return {
       success: false,
-      failure: 'filename-not-a-string'
+      failure: 'svg-png-switch-not-a-boolean'
     };
   }
 
@@ -139,27 +131,9 @@ exports.render = function(jsonData, filename, width, height) {
   width = width || parseInt(json_object.imageWidth, 10) || 700;
   height = height || parseInt(json_object.imageHeight, 10) || 400;
 
-  if (filename.endsWith('.png')) {
-    render_png(json_object, filename, width, height);
-  } else if (filename.endsWith('.svg')) {
-    render_svg(json_object, filename, width, height);
+  if (!do_svg) {
+    return render_png(json_object, width, height);
   } else {
-    return {
-      success: false,
-      failure: "Only PNG or SVG files can be rendered."
-    };
-  }
-
-  // File should usually exist, but let's be on the safe side here.
-  if (fs.existsSync(filename)) {
-    return {
-      success: true,
-      filename: filename
-    };
-  } else {
-    return {
-      success: false,
-      failure: 'echarts-renderer'
-    };
+    return render_svg(json_object, width, height);
   }
 };

@@ -10,6 +10,11 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 6.1.0-pre (2025-01-01)
+
+* __[improvement]__
+The image rendering process is simplified and does now use less I/O operations.
+
 ## Version 6.0.6 (2024-11-11)
 
 * __[maintenance]__
