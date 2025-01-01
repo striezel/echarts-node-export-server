@@ -15,6 +15,9 @@ change in this application.
 * __[improvement]__
 The image rendering process is simplified and does now use less I/O operations.
 
+* __[maintenance]__
+Update dependency `debug` to 4.4.0.
+
 ## Version 6.0.6 (2024-11-11)
 
 * __[maintenance]__
