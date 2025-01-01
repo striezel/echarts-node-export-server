@@ -16,18 +16,16 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var fs = require('fs');
 const { createCanvas } = require('canvas');
 const echarts = require('./echarts.v5.5.1.min.js');
-const { v4: uuidv4 } = require('uuid');
 
 
-/* Renders JSON data for a ECharts plot into a SVG file.
+/* Renders JSON data for a ECharts plot into a SVG image.
 
    Parameters:
      jsonData - (string) the JSON data required by ECharts
-     width    - (number) width of the SVG file in pixels
-     height   - (number) height of the SVG file in pixels
+     width    - (number) width of the SVG image in pixels
+     height   - (number) height of the SVG image in pixels
 
    Returns:
      object that contains two members:
@@ -54,12 +52,12 @@ function render_svg(jsonData, width, height) {
   };
 }
 
-/* Renders JSON data for a ECharts plot into a PNG file.
+/* Renders JSON data for a ECharts plot into a PNG image.
 
    Parameters:
      jsonData - (string) the JSON data required by ECharts
-     width    - (number) width of the PNG file in pixels
-     height   - (number) height of the PNG file in pixels
+     width    - (number) width of the PNG image in pixels
+     height   - (number) height of the PNG image in pixels
 
    Returns:
      object that contains two members:
@@ -82,14 +80,14 @@ function render_png(jsonData, width, height) {
   };
 }
 
-/* Renders JSON data for a ECharts plot into a PNG or SVG file.
+/* Renders JSON data for a ECharts plot into a PNG or SVG image.
 
    Parameters:
      jsonData - (string) the JSON data required by ECharts
-     do_svg   - (boolean) whether to render into an SVG file (true) or a PNG
-                          file (false)
-     width    - (number) width of the PNG file in pixels
-     height   - (number) height of the PNG file in pixels
+     do_svg   - (boolean) whether to render into an SVG image (true) or a PNG
+                          image (false)
+     width    - (number) width of the PNG / SVG image in pixels
+     height   - (number) height of the PNG / SVG image in pixels
 
    Returns:
      object that contains two members:
