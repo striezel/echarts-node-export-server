@@ -33,7 +33,11 @@ RUN mkdir -p /opt/export-server
 COPY export-server /opt/export-server
 WORKDIR /opt/export-server
 # Install required Node.js packages.
-RUN npm install
+# Note: If "plain" npm install fails, then it is usually because there is no
+# pre-built version of the canvas package available for the current
+# architecture. Therefore, the second branch of that command installs the build
+# tool required to build canvas and then tries to do npm install again.
+RUN npm install || apt-get install -y build-essential libcairo2-dev libpango1.0-dev && npm install
 # Node.js server runs on port 3000.
 EXPOSE 3000
 # Start server via NPM.
