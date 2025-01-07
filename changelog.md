@@ -10,6 +10,14 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 6.1.1-pre (2025-01-07)
+
+* __[maintenance]__
+The lock file package-lock.json is converted from version 2 to version 3.
+Version 3 has been supported since (at least) Node.js 16 and is the default in
+Node.js 18. Since this project already requires Node.js 16 or later it is save
+to convert the file to the newer version.
+
 ## Version 6.1.0 (2025-01-01)
 
 * __[improvement]__
