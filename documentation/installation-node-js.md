@@ -68,7 +68,7 @@ are then cached in the `node_modules/` directory for future use.
 
 Note that this can possibly fail for some operating systems where no
 pre-compiled version of the Node.js
-[`canvas` package](https://www.npmjs.com/package/canvas/v/2.11.2#compiling)
+[`canvas` package](https://www.npmjs.com/package/canvas/v/3.0.1#compiling)
 is available. In that case Node.js attempts to compile the package from source.
 However, that requires some additional software, for example a C++ compiler as
 well as Cairo and Pango. The documentation of `canvas` has more information on

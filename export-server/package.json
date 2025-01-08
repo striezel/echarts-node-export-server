@@ -1,6 +1,6 @@
 {
   "name": "echarts-node-export-server",
-  "version": "6.1.1-pre",
+  "version": "7.0.0-pre",
   "description": "ECharts Node.js export server",
   "repository": {
     "url": "https://gitlab.com/striezel/echarts-node-export-server.git",
@@ -25,6 +25,6 @@
     "canvas": "^3.0.1"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   }
 }

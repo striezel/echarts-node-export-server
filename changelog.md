@@ -10,12 +10,23 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
-## Version 6.1.1-pre (2025-01-07)
+## Version 7.0.0-pre (2025-01-08)
+
+* __[breaking change]__
+__Support for Node.js 16, and Node.js 17 is dropped.__
+The minimum required version is now Node.js 18.
+These old Node.js versions have reached their end of life. All those versions
+are not maintained anymore by the Node.js developers. If you are still using
+older versions of Node.js, then please consider updating to a newer one.
+
+* __[maintenance]__
+Update dependency `canvas` to 3.0.1.
+This version of `canvas` drops support for Node.js 16.
 
 * __[maintenance]__
 The lock file package-lock.json is converted from version 2 to version 3.
 Version 3 has been supported since (at least) Node.js 16 and is the default in
-Node.js 18. Since this project already requires Node.js 16 or later it is save
+Node.js 18. Since this project already requires Node.js 18 or later it is save
 to convert the file to the newer version.
 
 ## Version 6.1.0 (2025-01-01)
