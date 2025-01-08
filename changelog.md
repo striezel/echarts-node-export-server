@@ -29,6 +29,9 @@ Version 3 has been supported since (at least) Node.js 16 and is the default in
 Node.js 18. Since this project already requires Node.js 18 or later it is save
 to convert the file to the newer version.
 
+* __[maintenance]__
+Update Dockerfile to use Node.js 22 instead of Node.js 20.
+
 ## Version 6.1.0 (2025-01-01)
 
 * __[improvement]__
