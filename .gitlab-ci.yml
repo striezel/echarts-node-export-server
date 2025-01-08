@@ -1,13 +1,3 @@
-node_16:
-  image: node:16-slim
-  stage: build
-  before_script:
-    - node --version
-    - npm --version
-  script:
-    - cd ./export-server
-    - npm install
-
 node_18:
   image: node:18-slim
   stage: build
