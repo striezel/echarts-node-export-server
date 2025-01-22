@@ -63,7 +63,7 @@ describe('Line charts', () => {
         assert.ok(body.endsWith('</svg>'));
 
         /* Current server response is something like
-        
+
            <svg width="700" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 700 400">
 <rect width="700" height="400" x="0" y="0" fill="#ffffff"></rect>
 <path d="M70 330.5L630 330.5" fill="none" pointer-events="visible" stroke="#E0E6F1" class="zr2-cls-8"></path>
@@ -131,7 +131,7 @@ fill:rgba(255,255,255,1);
 
 </style>
 </svg>
-        
+
         */
 
         // Check partial matches, avoiding the random class / id bits.

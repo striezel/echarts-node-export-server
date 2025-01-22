@@ -73,7 +73,7 @@ describe('Sankey charts', () => {
         assert.ok(body.endsWith('</svg>'));
 
         /* Current server response is something like
-        
+
            <svg width="700" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 700 400">
 <rect width="700" height="400" x="0" y="0" fill="#ffffff"></rect>
 <path d="M20 0C262.5 0 262.5 68.1 505 68.1L505 160.7C262.5 160.7 262.5 92.6 20 92.6Z" transform="translate(35 20)" fill="#314656" fill-opacity="0.2" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr0-cls-0"></path>
@@ -124,7 +124,7 @@ fill:rgba(92,123,217,1);
 
 </style>
 </svg>
-        
+
         */
 
         // Check partial matches, avoiding the random class / id bits.

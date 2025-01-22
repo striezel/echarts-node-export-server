@@ -83,7 +83,7 @@ describe('Pie charts', () => {
         assert.ok(body.endsWith('</svg>'));
 
         /* Current server response is something like
-        
+
            <svg width="700" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 700 400">
 <rect width="700" height="400" x="0" y="0" fill="#ffffff"></rect>
 <polyline points="436.6 149.9 449.5 142.4 464.5 142.4" fill="none" pointer-events="visible" stroke="#5470c6" class="zr0-cls-0"></polyline>
@@ -156,7 +156,7 @@ fill:rgba(0,0,0,0);
 
 </style>
 </svg>
-        
+
         */
 
         // Check partial matches, avoiding the random class / id bits.

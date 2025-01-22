@@ -101,7 +101,7 @@ describe('Sunburst charts', () => {
         assert.ok(body.endsWith('</svg>'));
 
         /* Current server response is something like
-        
+
            <svg width="700" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 700 400">
 <rect width="700" height="400" x="0" y="0" fill="none"></rect>
 <path d="M350 155A45 45 0 1 1 321.9 164.8L350 200Z" fill="#91cc75" stroke="white" stroke-linejoin="bevel" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr0-cls-0"></path>
@@ -164,7 +164,7 @@ fill:rgba(255,234,141,1);
 
 </style>
 </svg>
-        
+
         */
 
         // Check partial matches, avoiding the random class / id bits.

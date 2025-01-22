@@ -82,7 +82,7 @@ describe('Radar charts', () => {
         assert.ok(body.endsWith('</svg>'));
 
         /* Current server response is something like
-        
+
            <svg width="700" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 700 400">
 <rect width="700" height="400" x="0" y="0" fill="#ffffff"></rect>
 <path d="M350 170L324 185L324 215L350 230L376 215L376 185L350 170L350 200ZM350 110L272.1 155L272.1 245L350 290L427.9 245L427.9 155L350 110L350 140L402 170L402 230L350 260L298 230L298 170L350 140ZM350 50L220.1 125L220.1 275L350 350L479.9 275L479.9 125L350 50L350 80L453.9 140L453.9 260L350 320L246.1 260L246.1 140L350 80Z" fill="rgb(250,250,250)" fill-opacity="0.2" class="zr0-cls-0"></path>
@@ -147,7 +147,7 @@ fill:rgba(0,0,0,0);
 
 </style>
 </svg>
-        
+
         */
 
         // Check partial matches, avoiding the random class / id bits.
