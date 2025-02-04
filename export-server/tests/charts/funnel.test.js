@@ -32,7 +32,7 @@ describe('Funnel charts', () => {
     };
 
     const req = http.request(options);
-    // Data taken from https://echarts.apache.org/examples/en/editor.html?c=bar-simple example.
+    // Data taken from https://echarts.apache.org/examples/en/editor.html?c=funnel example.
     const payload = `{
                        "title": {
                          "text": "Funnel"
