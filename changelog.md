@@ -10,7 +10,7 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
-## Version 7.0.5-pre (2025-05-07)
+## Version 7.0.5-pre (2025-06-03)
 
 * __[maintenance]__
 Update dependency `detect-libc` to 2.0.4.
@@ -19,7 +19,7 @@ Update dependency `detect-libc` to 2.0.4.
 Update dependency `node-abi` to 3.75.0.
 
 * __[maintenance]__
-Update dependency `semver` to 7.7.1.
+Update dependency `semver` to 7.7.2.
 
 ## Version 7.0.4 (2025-01-31)
 
