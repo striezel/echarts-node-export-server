@@ -21,6 +21,10 @@ Update dependency `node-abi` to 3.75.0.
 * __[maintenance]__
 Update dependency `semver` to 7.7.2.
 
+* __[maintenance]__
+Update dependency `tar-fs` to 2.1.3.
+This fixes a path traversal vulnerability in `tar-fs`, CVE-2025-48387.
+
 ## Version 7.0.4 (2025-01-31)
 
 * __[maintenance]__
