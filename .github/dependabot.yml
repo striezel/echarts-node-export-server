@@ -7,8 +7,6 @@ updates:
     directory: "/export-server"
     schedule:
       interval: "daily"
-    reviewers:
-      - "striezel"
     commit-message:
       prefix: "dependencies"
       include: "scope"
@@ -16,5 +14,3 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    reviewers:
-      - "striezel"
