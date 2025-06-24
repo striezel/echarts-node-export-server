@@ -10,6 +10,14 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Next Version (2025-06-??)
+
+* __[maintenance]__
+Update dependency `end-of-stream` to 1.4.5.
+
+* __[maintenance]__
+Update dependency `pump` to 3.0.3.
+
 ## Version 7.0.5 (2025-06-03)
 
 * __[maintenance]__
