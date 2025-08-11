@@ -11,7 +11,10 @@ jobs:
     runs-on: ubuntu-24.04
     name: Node.js package audit
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:

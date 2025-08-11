@@ -7,7 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     container: alpine:latest
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v5
+      with:
+          persist-credentials: false
     - name: Install Node.js + NPM
       run: |
         apk update
