@@ -10,6 +10,14 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 7.0.10 (2025-09-27)
+
+* __[maintenance]__
+Update dependency `detect-libc` to 2.1.1.
+
+* __[maintenance]__
+Update dependency `tar-fs` to 2.1.4.
+
 ## Version 7.0.9 (2025-09-04)
 
 * __[maintenance]__
