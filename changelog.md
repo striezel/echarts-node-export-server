@@ -10,6 +10,14 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Version 7.0.11 (2025-10-07)
+
+* __[maintenance]__
+Update dependency `detect-libc` to 2.1.2.
+
+* __[maintenance]__
+Update dependency `node-abi` to 3.78.0.
+
 ## Version 7.0.10 (2025-09-27)
 
 * __[maintenance]__
