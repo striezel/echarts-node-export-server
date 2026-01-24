@@ -16,7 +16,7 @@ change in this application.
 Update dependency `canvas` to 3.2.1.
 
 * __[maintenance]__
-Update dependency `node-abi` to 3.86.0.
+Update dependency `node-abi` to 3.87.0.
 
 ## Version 7.0.12 (2025-10-13)
 
