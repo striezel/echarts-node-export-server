@@ -18,6 +18,9 @@ Update dependency `canvas` to 3.2.1.
 * __[maintenance]__
 Update dependency `node-abi` to 3.87.0.
 
+* __[maintenance]__
+Update dependency `semver` to 7.7.4.
+
 ## Version 7.0.12 (2025-10-13)
 
 * __[maintenance]__
