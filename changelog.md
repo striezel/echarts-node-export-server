@@ -22,7 +22,7 @@ Update dependency `node-abi` to 3.92.0.
 Update dependency `pump` to 3.0.4.
 
 * __[maintenance]__
-Update dependency `semver` to 7.8.0.
+Update dependency `semver` to 7.8.2.
 
 ## Version 7.0.12 (2025-10-13)
 
