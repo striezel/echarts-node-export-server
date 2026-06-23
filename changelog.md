@@ -13,6 +13,10 @@ change in this application.
 ## Next Version (2025-11-??)
 
 * __[maintenance]__
+Update Dockerfile to use Node.js 24 instead of Node.js 22.
+Furthermore, the base image is updated from Debian 12 to Debian 13.
+
+* __[maintenance]__
 Update dependency `canvas` to 3.2.3.
 
 * __[maintenance]__
