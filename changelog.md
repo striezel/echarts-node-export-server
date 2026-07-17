@@ -10,7 +10,7 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
-## Next Version (2025-11-??)
+## Version 7.0.13 (2026-07-17)
 
 * __[maintenance]__
 Update Dockerfile to use Node.js 24 instead of Node.js 22.
