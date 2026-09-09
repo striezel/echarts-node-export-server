@@ -10,6 +10,11 @@ Since [ECharts](https://echarts.apache.org/) is the main dependency of this
 application, major version changes in ECharts will also trigger a major version
 change in this application.
 
+## Next Version (2026-09-??)
+
+* __[maintenance]__
+Update dependency `node-abi` to 3.96.0.
+
 ## Version 7.0.13 (2026-07-17)
 
 * __[maintenance]__
