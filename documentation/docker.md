@@ -4,10 +4,10 @@
 
 If you prefer the non-native approach and like to use Docker instead, you have
 to make sure that Docker is installed. For the purpose of this installation,
-we will assume that you are using Debian 11 (codename "bullseye"). The required
+we will assume that you are using Debian 12 (codename "bookworm"). The required
 steps should be similar on other Linux distributions.
 
-On a Debian 11 system you can install Docker by typing the following commands:
+On a Debian 12 system you can install Docker by typing the following commands:
 
     # update of package lists
     apt-get update
